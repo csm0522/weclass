@@ -11,16 +11,26 @@ class registerController extends Controller
         $data['username']=$_POST['name'];
         $data['pwd']=$_POST['pwds'];
         $data['tag']=$_POST['tag'];
-        dump($data);
+//        dump($data);
         $user=M('user');
         $con['user']=$data['user'];
         $isE=$user->where($con)->count();
-        if($isE=0){
-
+//        echo $isE;
+        if($isE==0){
+            if($user->add($data)){
+                $res['result']=0;
+                $res['msg']='注册成功';
+            }
+            else{
+                $res['result']=1;
+                $res['msg']='请稍后再试';
+            }
         }
         else{
-            $res['result']=1;
-            $res['msg']='用户名已经存在';
+            $res = array(
+                'result' => '1',
+                'msg' => 用户名已经存在
+            );
         }
         $this->ajaxReturn($res);
 
@@ -28,11 +38,8 @@ class registerController extends Controller
     public function checkusername(){
         $data['user']=$_GET['users'];
         $isE=M('user')->where($data)->count();
-
-//        $this->ajaxReturn (json_encode($arr),'JSON');
-        if($isE=0){
+        if($isE==0){
             $res['result']=0;
-            $res['msg']='用户名已经存在';
         }
         else{
             $res['result']=1;
@@ -40,7 +47,6 @@ class registerController extends Controller
         }
 
         $this->ajaxReturn($res,'JSON');
-
     }
 }
 ?>

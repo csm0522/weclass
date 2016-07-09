@@ -18,14 +18,20 @@
 
     </div>
 
-    <div class="information" style="margin-top:30px;"><span>输入账号</span><input type="text" name="" value=""></div>
-    <div class="information"><span>输入密码</span><input type="password" name="" value=""></div>
+    <div class="information" style="margin-top:30px;"><span>输入账号</span><input type="text" name="" value="" id="username">
+        <span
+            style="margin-left:10px;color:darkred" id="resuser">帐号不存在</span></div>
+    <div class="information"><span>输入密码</span><input type="password" name="" value="" id="pwd"></div>
 
-    <div class="footl"><input type="submit" name="" value="登录"></div>
+    <div class="footl"><input type="button" name="" value="登录" id="loginbtn"></div>
 </div>
 
 <script>
-
+$('#loginbtn').on('click',function(){
+    var names= $('#username').val();
+    var pwds = $('#pwd').val();
+    
+})
 </script>
 </body>
 </html>
