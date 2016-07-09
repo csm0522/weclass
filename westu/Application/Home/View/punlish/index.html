@@ -1,0 +1,58 @@
+<include file="Public/header"/>
+<link rel="stylesheet" type="text/css" href="__HomeCSS__/punlish.css"/>
+<div id="main_punlish">
+    <div class="title_p">
+        <ul>
+            <li style="border-top: 3px solid #f44450;background:white;"><a href="punlish.html">视频发布</a></li>
+
+        </ul>
+    </div>
+    <form method="post" action="{:U('punlish/impclass')}" enctype="multipart/form-data">
+        <div class="punlish_d">
+            <table>
+                <tr>
+                    <th style="height:70px;padding-bottom: 15px">视频名称</th>
+                    <td style="height:70px;padding-bottom: 15px"><input maxlength="50" type="text" value=""
+                                                                        class="newTxt" name="names"
+                                                                        placeholder="简洁明了的教学叙述,可以加分噢。最多只能输入50个字">
+                    </td>
+                </tr>
+                <tr>
+                    <th style="height:30px;padding-bottom: 15px">视频分类</th>
+                    <td style="height:30px;padding-bottom: 15px">
+                        <select name="types">
+                            <option value="0">请选择类型</option>
+                            <volist name="type" id="to">
+                                <option value="{$to.tid}">{$to.typename}</option>
+                            </volist>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="height:40px;vertical-align: top;padding-top:22px;padding-bottom: 15px">视频简介</th>
+                    <td style="height:40px;padding-bottom: 15px"><textarea maxlength="2000" name="intro"
+                                                                           class="newArea "
+                                                                           placeholder="准确到位的视频简单说明，最多只能输入200个字"></textarea>
+
+                </tr>
+                <tr>
+                    <th style="height:30px;padding-bottom:15px">封面图片</th>
+                    <td style="height:30px;padding-bottom:15px"><input type="file" name="img"
+                                                                       style="cursor: pointer; opacity:100;width:150px;height:20px;">
+                        <span style="margin-left:4%;width:100px;font-size:14px;padding-bottom: 15px">支持图片jpg/gif/png格式</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="height:30px;padding-bottom: 30px;">视频链接</th>
+                    <td style="height:30px;padding-bottom: 30px;"><input type="text" value="" class="newTxt"
+                                                                         name="video">
+                    </td>
+                </tr>
+
+            </table>
+            <div class="Take" style="padding-left: 45%"><input type="submit" name="" value="确认" disabled="true" placeholder=""></div>
+        </div>
+    </form>
+</div>
+<include file="Public/footer"/>

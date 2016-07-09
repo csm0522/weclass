@@ -1,0 +1,54 @@
+<include file="Public/header"/>
+<link rel="stylesheet" type="text/css" href="__HomeCSS__/liebiao.css"/>
+<script type="text/javascript" src="__HomeJS__/jquery.easydrag.handler.beta2.js"></script>
+<style>
+    #s2{
+        color:white;
+    }
+</style>
+<!--列表页-->
+<div id="container" style="min-height: 500px;">
+    <div class="container1">
+        <div class="head1">
+            <p class="p1" style="border-bottom: 1px solid  #D0D0D0; padding-bottom: 20px;">全部课程</p>
+            <div style="border-bottom: 1px solid #edf1f2">
+                <ul>
+                    <li class="p2">分类</li>
+                    <volist name="type" id="to">
+                        <a href="__MODULE__/course/showlist/id/{$to.tid}">
+                            <li class="p3" id="type{$to.tid}">{$to.typename}</li>
+                        </a>
+                    </volist>
+                </ul>
+                <div class="clear"></div>
+            </div>
+
+            <div class="tool1">
+                <ul>
+                    <li class="p2 active" style="padding-left: 5px;padding-right: 5px;">最新</li>
+                    <a href="">
+                        <li class="p3">最热</li>
+                    </a>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="content1">
+            <div class="dade">
+                <volist name="courselist" id="co" empty="暂无数据">
+                    <div class="xiaode"><a href="__MODULE__/course/showlist/id/{$to.tid}">
+                        <img src="image/liebiao/img1.jpg"/>
+                        <p class="content-p1">HTML+CSS基础课程</p>
+                        <p class="content-p2" style="height: 10px;">8小时带领大家步步深入学习标签和基础知…</p>
+                        <p class="content-p3">更新完毕 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;396313人学习</p></a>
+                    </div>
+                </volist>
+
+                <div class="clear"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<include file="Public/footer"/>

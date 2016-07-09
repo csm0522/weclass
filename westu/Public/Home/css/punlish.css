@@ -1,0 +1,183 @@
+/* 
+* @Author: anchen
+* @Date:   2016-07-07 16:01:27
+* @Last Modified by:   anchen
+* @Last Modified time: 2016-07-07 16:14:28
+*/
+
+a{text-decoration: none;color:black;font-family: "微软雅黑";}
+body{
+    background: #f4f4f4;
+}
+#main_punlish{
+    width:88%;
+    min-width: 1060px;
+    background: white;
+    margin-left:auto;
+    margin-right: auto;
+   margin-top:40px;
+  
+   
+}
+
+.title_p{
+    width:100%;
+    height: 56px;
+    
+    background:#ECE8E8;
+}
+.title_p ul{
+    list-style-type: none;
+    margin-top:20px;
+    border-bottom: 1px solid #dadada;
+}
+.title_cp{
+    width:100%;
+    height: 56px;
+    
+    background:#884F4F;
+}
+.title_cp p{
+    font-size: 20px;
+    font-family: "微软雅黑";
+    padding-top:12px;
+    margin-left:20px;
+    color:white;
+}
+.title_p li{
+    display:inline-block;
+    width:115px;
+    height:13px;
+    padding-top:20px;
+    padding-bottom: 20px;
+    
+    text-align: center;
+}
+.punlish_d  span{
+    font-size:13px;
+    font-family: "微软雅黑";
+   color: #959595;
+   width:300px;
+
+}
+.punlish_d table{
+    margin-left:auto;
+    margin-right: auto;
+    border:none;
+}
+.newTxt {
+    background: #fbfbfb url(../image/article_single/txtBg.png) repeat-x left top;
+    width:750px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #abadb3;
+    font-size: 14px;
+    padding: 0 5px;
+}
+.punlish_d th{
+    padding-left:20px;
+      padding-right:10px;
+padding-top:18px;
+ border-bottom: 1px solid #e9e6e7;
+
+
+
+}
+.punlish_d td{
+     padding-top:20px;
+     border-bottom: 1px solid #e9e6e7;
+     padding-left:25px;
+}
+.punlish_d select{
+    width:200px;
+    height:30px;
+
+}
+.punlish_d textarea{
+    border: solid 1px #c1c1c1;
+    margin: 0px;
+    padding: 5px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font: 12px/1.6 Verdana,宋体,Helvetica,sans-serif;
+    width:810px;
+    height:140px;
+    resize:none;
+}
+.punlish_d p{
+    font-family:"微软雅黑";
+}
+.newTime {
+    background: #fbfbfb url(../image/article_single/txtBg.png) repeat-x left top;
+    width:240px;
+    height: 36px;
+    line-height: 36px;
+    border: 1px solid #abadb3;
+    font-size: 14px;
+    padding: 0 5px;
+}
+.Take{
+     width:60%;
+    min-width: 100px;
+    height:94px;
+
+ margin-left: auto;
+ margin-right: auto;
+ padding-left: 30px;
+}
+.Take input{
+   width:88px;
+    height:37px;
+    background:#f44450;
+    border:none;
+    border-radius: 5px;
+    color:white;
+  font-size:18px;
+  font-family:"微软雅黑";
+  margin-top:25px;
+  margin-left:0px;
+}
+.Punlish{
+    width:60%;
+    min-width: 1000px;
+    height:94px;
+
+ margin-left: auto;
+ margin-right: auto;
+ padding-left: 30px;
+}
+.Punlish input{
+    width:88px;
+    height:37px;
+    background:#b02a34;
+    border:none;
+    border-radius: 5px;
+    color:white;
+  font-size:18px;
+  font-family:"微软雅黑";
+  margin-top:25px;
+  margin-left:0px;
+ 
+}
+.Punlish_c input{
+      width:88px;
+    height:37px;
+    background:#f44450;
+    border:none;
+    border-radius: 5px;
+    color:white;
+  font-size:18px;
+  font-family:"微软雅黑";
+  margin-top:25px;
+  margin-left:0px;
+}
+.Punlish_c{
+    width:60%;
+    min-width: 1000px;
+    height:94px;
+
+ margin-left: auto;
+ margin-right: auto;
+ padding-left: 30px;
+}
