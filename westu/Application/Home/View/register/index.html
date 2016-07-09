@@ -1,26 +1,84 @@
-<include file="Public/header" title="Index" />
-    <link rel="stylesheet" type="text/css" href="__HomeCSS__/login.css"/>
-    <div class="main1">
+<include file="Public/header" title="Index"/>
+<link rel="stylesheet" type="text/css" href="__HomeCSS__/login.css"/>
+<style>
+    input{
+        background-color: white;
+    }
+</style>
+<div class="main1">
     <div class="headm">
-    <ul>
-    <a href="{:U('login/index')}"><li>登录</li></a>
-    <a href="{:U('register/index')}"><li style="background:#fa243d;color:white;">注册</li></a>
-     <a href="{:U('index/index')}"><li><img src="__HomeIMG__/index/close.png" style="width:20%;margin-left:180px;margin-top:-4px;opacity:0.7" ></li></a>
-    </ul>
-       <div class="clear"></div>
+        <ul>
+            <a href="{:U('login/index')}">
+                <li>登录</li>
+            </a>
+            <a href="{:U('register/index')}">
+                <li style="background:#fa243d;color:white;">注册</li>
+            </a>
+            <a href="{:U('index/index')}">
+                <li><img src="__HomeIMG__/index/close.png"
+                         style="width:20%;margin-left:180px;margin-top:-4px;opacity:0.7"></li>
+            </a>
+        </ul>
+        <div class="clear"></div>
     </div>
-    <div class="information"  style ="margin-top:30px;"><span>设置昵称</span><input type="password" name="" value=""></div>
-    <div class="information" ><span>设置账号</span><input type="text" name="" value=""></div>
-    <div class="information"><span>设置密码</span><input type="password" name="" value=""></div>
-    <div class="information"><span>确认密码</span><input type="password" name="" value=""></div>
-         <div class="information1"><span>身份选择</span>
-     <select name="shenfen">
-     <option value="1">学生</option>
-      <option value="2">老师</option>
-     option
-     </select></div>
+        <div class="information" style="margin-top:30px;"><span>设置昵称</span><input type="text" name="" value="" id="username"  placeholder="不超过20个字符" onkeyup="checklength(this,20)"><span style="margin-left:10px;color:darkred" id="resusername">字数超限</span>
+        </div>
+        <div class="information"><span>设置账号</span><input type="text" name="" value="" id="user"></div>
+        <div class="information"><span>设置密码</span><input type="password" name="" value="" id="pwd"></div>
+        <div class="information"><span>确认密码</span><input type="password" name="" value="" id="repwd"><span style="margin-left:10px;color:darkred" id="respwd">确认有误</span></div>
+        <div class="information1"><span>身份选择</span>
+            <select name="shenfen">
+                <option value="1">学生</option>
+                <option value="2">老师</option>
+                option
+            </select>
+        </div>
+        <div class="footl"><input type="button" name="" value="注册" id="regbtn"></div>
+</div>
+<script>
+    $(document).ready(function(){
+       $('#resusername').hide();
+        $('#respwd').hide();
+    });
+    var flag = true;
+    function checklength(which,maxlength){
+        var maxChars = maxlength; //
+        if(which.value.length > maxChars){
+            which.setAttribute("style","-webkit-box-shadow:0px 0px 5px red;outline:none;");
+                $('#resusername').show();
+            flag = false;
+        }else{
+            which.setAttribute("style","");
+            $('#resusername').hide();
+            flag = true;
+        }
+    }
 
-    <div class="footl"><input type="submit" name="" value="注册"></div>
-    </div>
-    </body>
+
+    $('#regbtn').on('click',function(){
+        var username = $('#username').val();
+        var user = $('#user').val();
+        var pwd = $('#pwd').val();
+        var repwd = $('#repwd').val();
+        function checkpwd(pwd,repwd){
+            if(pwd!=repwd){
+                $('#respwd').show();
+                flag = false;
+            }
+        }
+        function checknil(a1,a2,a3){
+            if(a1==""||a2==""||a3==""){
+                flag = false;
+            }
+        }
+        checkpwd(pwd,repwd);
+        checknil(username,user,pwd);
+        if(flag){
+
+        }else{
+            alert("请补全或修改后提交");
+        }
+    })
+</script>
+</body>
 </html>

@@ -22,7 +22,7 @@ class courseController extends Controller
         $classid = $_GET['id'];
         $play=M('class')->where('cid='.$classid)->select();
         $this->assign('course',$play);
-        $this->display('play');
+        $this->display('course');
     }
 }
 ?>

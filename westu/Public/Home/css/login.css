@@ -15,14 +15,14 @@ a{text-decoration: none;}
 .headm ul{list-style-type: none;width:90%;}
 .headm li{float:left;padding-top:10px;text-align:center ;height:38px;width:120px;padding-top:20px;letter-spacing: 5px;}
 
-.information{width:347px;margin-left:auto;margin-right: auto;margin-top:20px;}
+.information{width:450px;margin-left:auto;margin-right: auto;margin-top:20px;}
 .information span{margin-right:10px;}
 .information input{width:261px;height:30px;border-radius: 3px;box-shadow: none;border:1px  solid #b9baba;padding-left:10px;}
 .footl{width:100%;text-align: center;padding-bottom: 50px;padding-top:10px;}
 .footl input{border-radius: 2px;background:#fa243d;width:347px;height:40px;border:none;margin-top:20px;color:white;letter-spacing: 5px;font-size: 16px;}
 .clear{clear:both;}
 /*注册*/
-.information1{width:347px;margin-left:auto;margin-right: auto;margin-top:20px;}
+.information1{width:450px;margin-left:auto;margin-right: auto;margin-top:20px;}
 .information1 span{margin-right:5px;}
 .information1 select{width:273px;height:37px;border-radius: 3px;box-shadow: none;border:1px  solid #b9baba;padding-left:10px;}
 
