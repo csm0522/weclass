@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="__HomeCSS__/person.css"/>
+
+<div class="heada" style="background:url(__HomeIMG__/person/banner.jpg) ">
+    <div class="headt"><img src="__HomeIMG__/person/use1.jpg"></div>
+    <div class="headw1">
+        <h2 class="web-font" style="margin-bottom: 5px"><?php echo $username; ?></h2>
+        <h4 class="web-font" style="margin-bottom: 40px;color: white;">
+            <?php
+        if(empty($intro)){echo('一句话介绍自己吧~');}else{echo $intro;} ?></p>
+        </h4>
+        <div class="Take"><a href="__MODULE__/person/edit"><input type="button" name="" value="编辑" placeholder=""></a></div>
+        <div class="publish">
+            <a href="punlish.html"><input type="button" name="" value="视频发布" placeholder="" ></a></div>
+    </div>
+    <div class="headw2">
+        <div class="guan1">
+            <p style="margin-bottom: 5px;">
+                <?php echo $concern; ?></p>
+            <p>关注</p></div>
+        <div class="guan2"><p style="margin-bottom: 5px;">  <?php echo $fan; ?></p> </p>
+            <p>粉丝</p></div>
+    </div>
+    <div class="clear"></div>
+</div>

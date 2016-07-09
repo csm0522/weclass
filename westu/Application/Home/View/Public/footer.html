@@ -4,5 +4,32 @@
     <p style="padding-top:5px;">Copyright 2016 All Right Reserved ,开发团队:陈少敏、吴欣、吴锐伟 ,图片来源网络,侵删</p>
 </div>
 
+<script type="text/javascript">
+    function study() {
+        document.getElementById("study").style.background = " url(__HomeIMG__/person/background.png)";
+        document.getElementById("concern").style.background = "none";
+        document.getElementById("fan").style.background = "none";
+        document.getElementById("person1").style.display = "block";
+        document.getElementById("person2").style.display = "none";
+        document.getElementById("person3").style.display = "none";
+    }
+    function concern() {
+        document.getElementById("concern").style.background = "url(__HomeIMG__/person/background.png)";
+        document.getElementById("study").style.background = "none";
+        document.getElementById("fan").style.background = "none";
+        document.getElementById("person2").style.display = "block";
+        document.getElementById("person1").style.display = "none";
+        document.getElementById("person3").style.display = "none";
+    }
+    function fan() {
+        document.getElementById("fan").style.background = " url(__HomeIMG__/person/background.png)";
+        document.getElementById("study").style.background = "none";
+        document.getElementById("concern").style.background = "none";
+        document.getElementById("person3").style.display = "block";
+        document.getElementById("person1").style.display = "none";
+        document.getElementById("person2").style.display = "none";
+    }
+    study();
+</script>
 </body>
 </html>

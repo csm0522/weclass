@@ -2,11 +2,11 @@
 * @Author: anchen
 * @Date:   2016-07-02 14:44:02
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-07-08 12:57:00
+* @Last Modified time: 2016-07-08 16:24:32
 */
 
 *{font-family: "微软雅黑";color:#3b3e4a;margin:0;padding:0;}
-#mainp{background:url(../../../../../kecheng/image/person/banner.jpg) 0px -125px no-repeat;width:100%;min-width: 1028px;height:325px;}
+#mainp{background:url(../../../../../学习网1/image/person/banner.jpg) 0px -125px no-repeat;width:100%;min-width: 1028px;height:325px;}
 .head{
     width:100%;
     min-width: 1028px;
@@ -56,14 +56,14 @@ a{text-decoration: none;}
 }
 .headright{
     float:right;
-    /*width:310px;*/
+    width:400px;
   margin-top:9px;
 }
 .heads{
     display:inline-block;
     margin-top:6px;
 }
-.banner{width:100%;min-width: 1028px;margin-top:15px;text-align: center;background:url(../../../../../kecheng/image/index/bk.jpg);}
+.banner{width:100%;min-width: 1028px;margin-top:15px;text-align: center;background:url(../../../../../学习网1/image/index/bk.jpg);}
 .heads img{display:inline-block;width:20px;margin-right: 10px;padding-top: 11px;margin-top:0px;vertical-align: middle;padding-bottom: 10px;}
 .heads input{border-radius: 2px;box-shadow:none;border:1px solid #919393;width:200px;height:20px;display:inline-block;vertical-align: middle;}
 .headr{display:inline-block;margin-left:10px;}
@@ -89,11 +89,25 @@ a{text-decoration: none;}
     width: 200px;
     height:200px;
     border-radius: 95px;
-    border:1px solid #939393;vertical-align: bottom;
-
+    border:1px solid #939393;
+    vertical-align: bottom;
 }
 .Take input{
    width:66px;
+    height:28px;
+    background:#f44450;
+    border:none;
+    border-radius: 5px;
+    color:white;
+  font-size:15px;
+  font-family:"微软雅黑";
+  margin-top:17px;
+  margin-left:0px;
+}
+.Take{display:inline-block;}
+.publish{display:inline-block;margin-left:10px;}
+.publish input{
+   width:77px;
     height:28px;
     background:#f44450;
     border:none;
@@ -108,7 +122,7 @@ a{text-decoration: none;}
 .list1{width:1236px;margin-left:auto;margin-right: auto;margin:0 auto;}
 .list1 ul{list-style-type: none;}
 .list1 li{float:left;width:411px;height:35px;text-align: center;padding-top:15px;}
-.article{width:100%;min-width:1028px;background:#f0f0f0;margin-left;margin-right: auto;margin-left:auto;}
+.article{width:100%;min-width:1028px;background:#f0f0f0;margin-right: auto;margin-left:auto;}
 .article1{margin-left:auto;margin-right: auto;width:1236px;background:white;border-bottom: 1px solid #d0d0d0;}
 .a-img{display:inline-block;margin-left: 40px;margin-top:25px;margin-bottom: 25px;}
 .a-x{vertical-align: top;display:inline-block;margin-left:30px;margin-top:43px;}
@@ -121,6 +135,20 @@ a{text-decoration: none;}
 .main1-2{width:100%;position:relative;background:white;padding-top:10px;padding-bottom: 10px;}
 .main1-2l{float:left;color:red;font-size:10px;margin-left:10px;}
 .main1-2r{float:right;color:black;font-size:10px;margin-right: 10px;}
+
+/*个人资料*/
+.list2{width:100%;min-width: 1028px;margin-top:100px;border-bottom: 1px solid #d7d7d7;background:#fbf9f9;padding-bottom: 20px;}
+.list3{width:800px;margin-left:auto;margin-right: auto;padding-top:200px}
+.personal{margin-left:auto;margin-right:auto;width:537px;margin-top:20px;margin-bottom: 10px;}
+.personal span{margin-left:20px;}
+.personal input{margin-left:30px;width:400px;height:30px;border-radius: 3px;border:1px solid #d3d0d0;padding-left:10px;}
+.personal1{margin-left:auto;margin-right:auto;width:527px;margin-top:20px;margin-bottom:20px;}
+.personal1 p{margin-left:17px;}
+.list3 hr{border:none;height:1px;background:#dddddd;margin-left:auto;margin-right:auto;margin-top:5px;width:529px;}
+.personal2{margin-left:auto;margin-right:auto;width:527px;margin-top:20px;}
+.personal2 input{background:#FA243D;border-radius: 5px;width:77px;height:35px;float:right;color:white;font-family: "微软雅黑";border:none;}
+#person3{display:none;}
+#person2{display:none;}
 
 .foot{width:100%;min-width: 1028px;background:#555555;text-align: center;height:100px;margin-top:40px;}
 .foot p{color:white;margin-top:5px;font-size: 13px;}
