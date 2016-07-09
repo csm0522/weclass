@@ -18,20 +18,60 @@
 
     </div>
 
-    <div class="information" style="margin-top:30px;"><span>输入账号</span><input type="text" name="" value="" id="username">
+    <div class="information" style="margin-top:30px;"><span>输入账号</span><input type="text" name="" value=""
+                                                                              id="username">
         <span
-            style="margin-left:10px;color:darkred" id="resuser">帐号不存在</span></div>
+                style="margin-left:10px;color:darkred" id="resuser">帐号不存在</span></div>
+    <script>
+        $('#resuser').hide();
+    </script>
     <div class="information"><span>输入密码</span><input type="password" name="" value="" id="pwd"></div>
 
     <div class="footl"><input type="button" name="" value="登录" id="loginbtn"></div>
 </div>
 
 <script>
-$('#loginbtn').on('click',function(){
-    var names= $('#username').val();
-    var pwds = $('#pwd').val();
-    
-})
+    $('#resuser').hide();
+    $('#username').on('blur',function(){
+        var names = $('#username').val();
+        $.ajax({
+            url: '{:U(\'register/checkusername\')}',
+            data: {name:names},
+            type: 'post',
+            success: function (data) {
+                console.log(data);
+                if (data.result == 1) {
+                    $('#resuser').hide();
+                }
+                else {
+                    $('#resuser').show();
+                }
+            }
+        });
+    });
+    $('#loginbtn').on('click', function () {
+        var names = $('#username').val();
+        var pwds = $('#pwd').val();
+        var userdata = {
+            username: names,
+            pwd: hex_md5(pwds),
+        };
+        $.ajax({
+            url: '{:U(\'login/logins\')}',
+            data: userdata,
+            type: 'post',
+            success: function (data) {
+                console.log(data);
+                if (data.result == 0) {
+                    alert(data.msg);
+                    window.location.href = "{:U(\'index/index\')}";
+                }
+                else {
+                    alert(data.msg);
+                }
+            }
+        });
+    })
 </script>
 </body>
 </html>

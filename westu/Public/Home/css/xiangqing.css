@@ -5,7 +5,7 @@
 }
 .banner{
 	height: 240px;
-	background: url(../image/xiangqing/banner.png);
+	background: url(../../../../../kecheng/image/xiangqing/banner.png);
 }
 .bannercontent{
 	width: 1200px;
@@ -97,7 +97,7 @@
 	margin-top: 50px;
 }
 .zhangjie-left{
-	background: url(../image/xiangqing/123.png) no-repeat 0 -106px;
+	background: url(../../../../../kecheng/image/xiangqing/123.png) no-repeat 0 -106px;
 	height: 40px;
 	width: 40px;
 	float: left;
@@ -139,7 +139,7 @@
 	height: 16px;
 	float: left;
 	margin-top: 11px;
-	background: url(../image/xiangqing/star.png);
+	background: url(../../../../../kecheng/image/xiangqing/star.png);
 }
 .pingjia-p{
 	font-size: 12px;

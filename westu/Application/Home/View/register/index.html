@@ -77,7 +77,7 @@
     $('#user').on('blur', function () {
         $.ajax({
             url: '{:U(\'register/checkusername\')}',
-            data: $('#user').val(),
+            data: {name:$('#user').val()},
             type: 'post',
             async: false,
             success: function (data) {
@@ -95,7 +95,7 @@
             $('#respwd').show();
             flag = false;
         }else{
-            $('#respwd').show();
+            $('#respwd').hide();
         }
     });
 

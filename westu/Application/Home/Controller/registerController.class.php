@@ -14,7 +14,7 @@ class registerController extends Controller
 //        dump($data);
         $user=M('user');
         $con['user']=$data['user'];
-        $isE=$user->where($con)->count();
+        $isE=$user->where($con)->filter('strip_tags')->count();
 //        echo $isE;
         if($isE==0){
             if($user->add($data)){
@@ -36,8 +36,8 @@ class registerController extends Controller
 
     }
     public function checkusername(){
-        $data['user']=$_GET['users'];
-        $isE=M('user')->where($data)->count();
+        $data['user']=$_POST['name'];
+        $isE=M('user')->where($data)->filter('strip_tags')->count();
         if($isE==0){
             $res['result']=0;
         }

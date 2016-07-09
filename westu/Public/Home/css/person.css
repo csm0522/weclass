@@ -6,7 +6,7 @@
 */
 
 *{font-family: "微软雅黑";color:#3b3e4a;margin:0;padding:0;}
-#mainp{background:url(../image/person/banner.jpg) 0px -125px no-repeat;width:100%;min-width: 1028px;height:325px;}
+#mainp{background:url(../../../../../kecheng/image/person/banner.jpg) 0px -125px no-repeat;width:100%;min-width: 1028px;height:325px;}
 .head{
     width:100%;
     min-width: 1028px;
@@ -56,14 +56,14 @@ a{text-decoration: none;}
 }
 .headright{
     float:right;
-    width:310px;
+    /*width:310px;*/
   margin-top:9px;
 }
 .heads{
     display:inline-block;
     margin-top:6px;
 }
-.banner{width:100%;min-width: 1028px;margin-top:15px;text-align: center;background:url(../image/index/bk.jpg);}
+.banner{width:100%;min-width: 1028px;margin-top:15px;text-align: center;background:url(../../../../../kecheng/image/index/bk.jpg);}
 .heads img{display:inline-block;width:20px;margin-right: 10px;padding-top: 11px;margin-top:0px;vertical-align: middle;padding-bottom: 10px;}
 .heads input{border-radius: 2px;box-shadow:none;border:1px solid #919393;width:200px;height:20px;display:inline-block;vertical-align: middle;}
 .headr{display:inline-block;margin-left:10px;}

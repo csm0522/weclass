@@ -12,21 +12,41 @@
     <script src="__HomeJS__/jquery.luara.0.0.1.min.js"></script>
 </head>
 <body>
-<div id ="head">
-    <div class ="img1">
-        <a href="index.html"><img src="__HomeIMG__/index/logo.png"  ></a>
+<div id="head">
+    <div class="img1">
+        <a href="{:U('index/index')}"><img src="__HomeIMG__/index/logo.png"></a>
     </div>
     <div class="headw">
         <ul>
-            <li style ="margin-left:-5px"><a  href="{:U('index/index')}" id="s1">首页</a></li>
-            <li><a href="{:U('course/index')}" id="s2" >全部课程</a></li>
-            <li><a href="http://itc.bnuz.edu.cn/about.aspx?id=19" >数字媒体技术系</a></li>
-            <li><a href="#" >关于我们</a></li>
+            <li style="margin-left:-5px"><a href="{:U('index/index')}" id="s1">首页</a></li>
+            <li><a href="{:U('course/index')}" id="s2">全部课程</a></li>
+            <li><a href="http://itc.bnuz.edu.cn/about.aspx?id=19">数字媒体技术系</a></li>
+            <li><a href="#">关于我们</a></li>
         </ul>
     </div>
     <div class="headright">
-        <div class="heads"><img src="__HomeIMG__/index/sousuo.png" ><input type="text" name="" value="" placeholder=""></div>
-        <div class="headr"><span><a href="{:U('login/index')}"style="color:white;" >登录</a></span><span>|</span><span><a href="{:U('register/index')}" style="color:white;">注册</a></span></div>
+        <div class="heads"><img src="__HomeIMG__/index/sousuo.png"><input type="text" name="" value="" placeholder="">
+
+        </div>
+
+        <?php if(empty(session('uid'))){?>
+        <div class="headr">
+            <span><a href="__ROOT__/index.php/Home/login/index" style="color:white;">登录</a></span>
+            <span>|</span>
+            <span><a href="__ROOT__/index.php/Home/register/index" style="color:white;">注册</a></span>
+        </div>
+        <?php }?>
+
+
+        <?php if(!empty(session('uid'))){?>
+        <div class="headr">
+            <span><a href="__ROOT__/index.php/Home/person/index" style="color:white;">个人中心</a></span>
+            <span>|</span>
+            <span><a href="__ROOT__/index.php/Home/login/logout" style="color:white;">注销</a></span>
+        </div>
+        <?php }?>
+
+
     </div>
     <div class="clear"></div>
 </div>
