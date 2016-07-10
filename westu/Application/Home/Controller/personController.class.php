@@ -18,6 +18,11 @@ class personController extends Controller {
         $this->assign('course',$myclass);
         $intro = M('user')->where('uid='.session('uid'))->getField(intro);
         $this->assign('intro',$intro);
+
+        $tag = M('user')->where('uid='.session('uid'))->getField(tag);
+        if($tag == 2){
+            echo "  <script>$('#pubbtn').hide();</script>";
+        }
         $this->display();
     }
     public function personUI(){

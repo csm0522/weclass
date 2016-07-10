@@ -139,7 +139,7 @@ a{text-decoration: none;}
 
 /*个人资料*/
 .list2{width:100%;min-width: 1028px;margin-top:100px;border-bottom: 1px solid #d7d7d7;background:#fbf9f9;padding-bottom: 20px;}
-.list3{width:800px;margin-left:auto;margin-right: auto;padding-top:250px}
+.list3{width:800px;margin-left:auto;margin-right: auto;}
 .personal{margin-left:auto;margin-right:auto;width:537px;margin-top:20px;margin-bottom: 20px;}
 .personal span{margin-left:20px;}
 .personal input{margin-left:30px;width:400px;height:30px;border-radius: 3px;border:1px solid #d3d0d0;padding-left:10px;}

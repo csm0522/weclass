@@ -13,15 +13,14 @@
                 <tr>
                     <th style="height:70px;padding-bottom: 15px">视频名称</th>
                     <td style="height:70px;padding-bottom: 15px"><input maxlength="50" type="text" value=""
-                                                                        class="newTxt" name="names"
+                                                                        class="newTxt" name="cname"
                                                                         placeholder="简洁明了的教学叙述,可以加分噢。最多只能输入50个字">
                     </td>
                 </tr>
                 <tr>
                     <th style="height:30px;padding-bottom: 15px">视频分类</th>
                     <td style="height:30px;padding-bottom: 15px">
-                        <select name="types">
-                            <option value="0">请选择类型</option>
+                        <select name="type">
                             <volist name="type" id="to">
                                 <option value="{$to.tid}">{$to.typename}</option>
                             </volist>
@@ -38,7 +37,7 @@
                 </tr>
                 <tr>
                     <th style="height:30px;padding-bottom:15px">封面图片</th>
-                    <td style="height:30px;padding-bottom:15px"><input type="file" name="img"
+                    <td style="height:30px;padding-bottom:15px"><input type="file" name="imgs"
                                                                        style="cursor: pointer; opacity:100;width:150px;height:20px;">
                         <span style="margin-left:4%;width:100px;font-size:14px;padding-bottom: 15px">支持图片jpg/gif/png格式</span>
                     </td>
@@ -51,7 +50,7 @@
                 </tr>
 
             </table>
-            <div class="Take" style="padding-left: 45%"><input type="submit" name="" value="确认" disabled="true" placeholder=""></div>
+            <div class="Take" style="padding-left: 45%"><input type="submit" name="" value="确认"  placeholder=""></div>
         </div>
     </form>
 </div>
