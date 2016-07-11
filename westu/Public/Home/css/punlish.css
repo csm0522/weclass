@@ -57,7 +57,6 @@ body{
     font-size:13px;
     font-family: "微软雅黑";
    color: #959595;
-   width:300px;
 
 }
 .punlish_d table{
@@ -101,7 +100,7 @@ padding-top:18px;
     overflow-y: auto;
     overflow-x: hidden;
     font: 12px/1.6 Verdana,宋体,Helvetica,sans-serif;
-    width:810px;
+    width:750px;
     height:140px;
     resize:none;
 }

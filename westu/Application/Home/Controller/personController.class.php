@@ -16,8 +16,8 @@ class personController extends Controller {
         $this->assign('username',session('username'));
         $this->assign('userid',session('uid'));
         $this->assign('course',$myclass);
-        $intro = M('user')->where('uid='.session('uid'))->getField(intro);
-        $this->assign('intro',$intro);
+        $user = M('user')->where('uid='.session('uid'))->select();
+        $this->assign('intro',$user);
 
         $tag = M('user')->where('uid='.session('uid'))->getField(tag);
         if($tag == 2){

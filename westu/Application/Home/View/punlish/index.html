@@ -1,5 +1,12 @@
 <include file="Public/header"/>
 <link rel="stylesheet" type="text/css" href="__HomeCSS__/punlish.css"/>
+<style>
+    .tips{
+
+        float:right;
+        margin-right: 5px;
+    }
+</style>
 <div id="main_punlish">
     <div class="title_p">
         <ul>
@@ -14,38 +21,40 @@
                     <th style="height:70px;padding-bottom: 15px">视频名称</th>
                     <td style="height:70px;padding-bottom: 15px"><input maxlength="50" type="text" value=""
                                                                         class="newTxt" name="cname"
-                                                                        placeholder="简洁明了的教学叙述,可以加分噢。最多只能输入50个字">
+                                                                        placeholder="简洁明了的给课程一个名称吧。">
                     </td>
                 </tr>
                 <tr>
                     <th style="height:30px;padding-bottom: 15px">视频分类</th>
                     <td style="height:30px;padding-bottom: 15px">
                         <select name="type">
+                            <option value="0">请选择课程分类</option>
                             <volist name="type" id="to">
                                 <option value="{$to.tid}">{$to.typename}</option>
                             </volist>
-
                         </select>
+                        <span class="tips" id="selected">视频链接?</span>
                     </td>
                 </tr>
                 <tr>
                     <th style="height:40px;vertical-align: top;padding-top:22px;padding-bottom: 15px">视频简介</th>
-                    <td style="height:40px;padding-bottom: 15px"><textarea maxlength="2000" name="intro"
+                    <td style="height:40px;padding-bottom: 15px"><textarea maxlength="200" name="intro"
                                                                            class="newArea "
-                                                                           placeholder="准确到位的视频简单说明，最多只能输入200个字"></textarea>
+                                                                           placeholder="准确到位的视频说明，将会加分哦~"></textarea>
 
                 </tr>
                 <tr>
                     <th style="height:30px;padding-bottom:15px">封面图片</th>
                     <td style="height:30px;padding-bottom:15px"><input type="file" name="imgs"
-                                                                       style="cursor: pointer; opacity:100;width:150px;height:20px;">
-                        <span style="margin-left:4%;width:100px;font-size:14px;padding-bottom: 15px">支持图片jpg/gif/png格式</span>
+                                                                       style="cursor: pointer; opacity:100;width:450px;height:20px;">
+                        <span class="tips">仅支持图片jpg/gif/png格式</span>
                     </td>
                 </tr>
                 <tr>
                     <th style="height:30px;padding-bottom: 30px;">视频链接</th>
                     <td style="height:30px;padding-bottom: 30px;"><input type="text" value="" class="newTxt"
-                                                                         name="video">
+                                                                         name="video" placeholder="遇到问题?点击右侧获得帮助。">
+                        <a href=""><span style="margin-left: 5px">视频链接?</span></a>
                     </td>
                 </tr>
 
