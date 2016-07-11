@@ -47,6 +47,28 @@ class loginController extends Controller
         session(null);
         redirect(U('index/index'));
     }
+    public function changepwd(){
+        $data['pwd'] = $_POST['olds'];
+        $user = M('user');
+        $pwd = $user->where('uid='. session('uid'))->getField(pwd);
+        if($data['pwd']==$pwd){
+            $cons['pwd']=$_POST['news'];
+            if($user->where('uid='.session('uid'))->save($cons)){
+                $res['res'] = 0;
+                $res['msg'] = '修改密码成功';
+                session(null);
+            }
+            else{
+                $res['res'] = 1;
+                $res['msg'] = '网络错误,请稍后再试';
+            }
+        }else{
+            $res['res'] = 2;
+            $res['msg'] = '原密码不正确';
+        }
+
+        $this->ajaxReturn($res);
+    }
 }
 
 ?>

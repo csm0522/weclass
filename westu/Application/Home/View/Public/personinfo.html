@@ -6,7 +6,7 @@
         <h2 class="web-font" style="margin-bottom: 5px"><?php echo $username; ?></h2>
         <h4 class="web-font" style="margin-bottom: 40px;color: white;">
             <?php
-        if(empty($intro)){echo('快一句话介绍自己吧~');}else{echo $intro;} ?></p>
+        if(empty($intro['intro'])){echo('快一句话介绍自己吧~');}else{echo $intro['intro'];} ?></p>
         </h4>
         <div class="Take"><a href="__MODULE__/person/edit"><input type="button" name="" value="编辑" placeholder=""></a>
         </div>
