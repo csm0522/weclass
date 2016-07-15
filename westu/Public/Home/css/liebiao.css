@@ -70,6 +70,7 @@
 .xiaode img{
 	display:block;
 	margin: 0 auto;
+	width:250px;
 }
 .xiaode p{
 	text-overflow: ellipsis;

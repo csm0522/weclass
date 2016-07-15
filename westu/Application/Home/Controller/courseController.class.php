@@ -20,6 +20,7 @@ class courseController extends Controller
     }
     public function showdetail(){
         $classid = $_GET['id'];
+        
         $play=M('class')->where('cid='.$classid)->select();
         $this->assign('course',$play);
         $this->display('course');

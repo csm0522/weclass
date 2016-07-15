@@ -26,9 +26,25 @@ class punlishController extends Controller {
             'ctype'=>$_POST['type'],
             'img' => $_POST['imgs'],
             'video'=>$_POST['video'],
-            'cintro' => $_POST['intro']
+            'cintro' => $_POST['intro'],
         );
 
-        dump($data);
+
+        if(M('class')->add($data)) {
+            echo "<script>window.location.href=".U('course/showdetail/cid/'.$cid)."</script>";
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
