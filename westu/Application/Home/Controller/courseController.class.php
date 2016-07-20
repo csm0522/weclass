@@ -5,7 +5,7 @@ class courseController extends Controller
 {
     public function index(){
         $types=M('classtype')->select();
-        $list=M('class')->select();
+        $list=M('class')->order("num DESC")->select();
         $this->assign('courselist',$list);
         $this->assign('type',$types);
         $this->display('list');
@@ -20,7 +20,7 @@ class courseController extends Controller
     }
     public function showdetail(){
         $classid = $_GET['id'];
-        
+        M("class")->where('cid='.$classid)->setInc('num',1);
         $play=M('class')->where('cid='.$classid)->select();
         $this->assign('course',$play);
         $this->display('course');

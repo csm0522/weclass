@@ -28,10 +28,16 @@ class punlishController extends Controller {
             'video'=>$_POST['video'],
             'cintro' => $_POST['intro'],
         );
-
+        if(empty($data['img'])){
+            $data['img']='./upload/classTX/2016-07-20/578f1cad312d4.jpg';
+        }
+        if(empty($data['video'])){
+            $this->Error("上传视频不得为空");
+            return;
+        }
 
         if(M('class')->add($data)) {
-            echo "<script>window.location.href=".U('course/showdetail/cid/'.$cid)."</script>";
+            $this->Success("视频上次成功");
         }
     }
 }

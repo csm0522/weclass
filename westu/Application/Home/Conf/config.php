@@ -1,6 +1,7 @@
 <?php
 return array(
     //让页面显示追踪日志信息
+    
     'SHOW_PAGE_TRACE'   => true,
 
     'URL_MODEL' =>1,//先关掉debug
@@ -37,5 +38,6 @@ return array(
     'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  't_',    // 数据库表前缀
     'DB_FIELDTYPE_CHECK'    =>  false,       // 是否进行字段类型检查
+    'DB_CHARSET' => 'utf8',
 
 );

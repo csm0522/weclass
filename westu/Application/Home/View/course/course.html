@@ -7,16 +7,21 @@
 <link href="__HomeCSS__/video-js.min.css" rel="stylesheet">
 <script src="__HomeJS__/video.min.js"></script>
 <link rel="stylesheet" type="text/css" href="__HomeCSS__/xiangqing.css"/>
+<style>
+    .videoshow h1{
+        margin-left: 10%;
+        margin-top: 50px;;
+    }
+</style>
 <volist name="course" id="co">
     <div class="videoshow">
-        <p>{$co.name}</p>
+        <h1>{$co.name}</h1>
         <div class="vedio" style="width: 1100px;margin-left:auto;margin-right:auto;margin-top:15px;">
             <!--视频插入的地方-->
             <embed src="{$co.video}"
                    quality="high" width="1100" height="500" align="middle" allowScriptAccess="always"
                    allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
         </div>
-
     </div>
 </volist>
 <script>
