@@ -10,26 +10,19 @@
         </h4>
         <div class="Take"><a href="__MODULE__/person/edit"><input type="button" name="" value="编辑" placeholder=""></a>
         </div>
-        <?php
-        if($userinfo['tag']==1){
-        }
-        else{
-        echo '<div class="publish" id="pubbtn">';
-        }
-        ?>
-
-        <a href="__MODULE__/punlish/index"><input type="button" name="" value="视频发布" placeholder=""></a>
+        <div class="publish" id="pubbtn">
+            <a href="__MODULE__/punlish/index"><input type="button" name="" value="视频发布" placeholder=""></a>
+        </div>
     </div>
-</div>
 
-<div class="headw2">
-    <div class="guan1">
-        <p style="margin-bottom: 5px;">
-            <?php echo $concern; ?></p>
-        <p>关注</p></div>
-    <div class="guan2"><p style="margin-bottom: 5px;">  <?php echo $fan; ?></p> </p>
-        <p>粉丝</p></div>
-</div>
-<div class="clear"></div>
+    <div class="headw2">
+        <div class="guan1">
+            <p style="margin-bottom: 5px;">
+                <?php echo $concern; ?></p>
+            <p>关注</p></div>
+        <div class="guan2"><p style="margin-bottom: 5px;">  <?php echo $fan; ?></p> </p>
+            <p>粉丝</p></div>
+    </div>
+    <div class="clear"></div>
 </div>
 <div class="clear"></div>

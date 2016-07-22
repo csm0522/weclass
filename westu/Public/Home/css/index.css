@@ -71,7 +71,7 @@ ol{
 }
 .headright{
     float:right;
-    width:400px;
+    width:445px;
   margin-top:3px;
 }
 .heads{
@@ -80,7 +80,7 @@ ol{
 }
 .banner{width:100%;min-width: 1028px;margin-top:15px;text-align: center;background:url(../image/index/bk.jpg);}
 .heads img{display:inline-block;width:20px;margin-right: 10px;padding-top: 11px;margin-top:0px;vertical-align: middle;padding-bottom: 10px;}
-.heads input{border-radius: 2px;box-shadow:none;border:1px solid #919393;width:200px;height:20px;display:inline-block;vertical-align: middle;}
+.heads input{border-radius: 2px;box-shadow:none;border:1px solid #919393;width:200px;height:20px;display:inline-block;vertical-align: middle;margin-right: 5px;}
 .headr{display:inline-block;margin-left:10px;}
 .headr span{margin-left:4px;font-size: 15px;color:white;}
 .luara-left{position:relative;padding:0;overflow: hidden;margin-left:0px;margin-right: 0px;}
