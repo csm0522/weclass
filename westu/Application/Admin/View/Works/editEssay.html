@@ -1,0 +1,65 @@
+<include file="Public/header" title="后台主页" />
+ <!--<js href="__PUBLIC__/Admin/js/jquery-2.0.2.js" />-->
+ <js href="__PUBLIC__/Admin/ueditor/ueditor.config.js" />
+ <js href="__PUBLIC__/Admin/ueditor/ueditor.all.min.js" />
+<div style="margin-left:180px;margin-top:60px;padding-bottom:50px;overflow: hidden;">
+	<div class="alert alert-info" role="alert">
+		<h1>作品编辑</h1>
+	</div>
+	<form action="{:U('Works/editEssay')}" method="post">
+		<table class="table table-striped" style="">
+			<tr>
+				<td style="width: 200px;height:60px;line-height:60px;font-size:24px;text-align: right;">标题 :</td>
+				<td style="height:60px;line-height:60px;font-size:20px;text-align: left;"><input name="title" type="text" style="height:40px;width:400px;border-radius: 4px; padding:4px;" value="{$data.title}"/></td>
+			</tr>
+			<tr>
+				<td style="width: 200px;height:60px;line-height:60px;font-size:24px;text-align: right;">分类 :</td>
+				<td style="height:60px;line-height:60px;font-size:20px;text-align: left;"><select name="fenlei" style="font-size:14px;height:40px;width:120px;color:#666">
+                   <option value="JC">原创教程</option>
+                    <option value="GD">观点/经验</option>
+                    <option value="SJ">设计资讯/资料</option>
+                    <option value="OTHERS">其他</option>
+                </select></td>
+			</tr>
+			<tr>
+				<td style="width: 200px;height:60px;line-height:60px;font-size:24px;text-align: right;">文章简介 :</td>
+				<td style="height:60px;line-height:60px;font-size:20px;text-align: left;"><input name="intro" type="text" style="height:40px;width:400px;border-radius: 4px; padding:4px;" value="{$data.intro}"/></td>
+			</tr>
+			<tr>
+				<td style="width: 200px;height:60px;line-height:60px;font-size:24px;text-align: right;">文章内容 :</td>
+				<td><script type="text/plain" id="Vent" style="width:800px;height:400px;"></script></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="hidden" name="hiddenid" value="{$data.ariticalid}"/><input type="submit"  class="btn btn-info" value="提交编辑"/></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<!--注册百度ueditor-->
+<script type="text/javascript">
+  var editor = new baidu.editor.ui.Editor({
+  	//PUBLIC HOME UEDITOR PHP CONFIG.JSON修改图片路径
+    toolbars:[['fullscreen', 'source', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+            'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
+            'directionalityltr', 'directionalityrtl', 'indent', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
+            'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
+            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment','insertcode', 'background', '|',
+            'horizontal', 'date', 'time', 'spechars']],//自定义ueditor工具栏
+    initialContent: '{$data.content|htmlspecialchars_decode}',
+    minFrameHeight: 100,//初始化框架大小
+    zIndex:1,
+    maximumWords:10000,
+    autoHeightEnabled: false,
+    autoFloatEnabled: true,//工具栏自动浮动-》关闭
+    textarea:'content'//form表单将通过该参数获得表单提交的数据
+  });
+  editor.render("Vent");
+</script>
+<!--百度Ueditor注册完毕-->
+</body>
+
+</html>

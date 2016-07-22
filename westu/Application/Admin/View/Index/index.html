@@ -1,0 +1,136 @@
+<include file="Public/header" title="后台主页" />
+<div style="margin-left:180px;margin-top:60px;padding-bottom:50px;overflow: hidden;padding:30px;">
+		<div class="jumbotron" style="padding: 30px;">
+			<h1>管理员</h1>
+
+			<p>欢迎登陆大学生作品分享网站后台管理系统.</p>
+
+		</div>
+
+
+
+
+    <div class="row" style="margin-left:0;">
+
+        <div class="col-lg-3" style="width: 25%;margin-bottom:10px;">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6 text-center">
+                            <i class="fa fa-users fa-5x"></i>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-left:0;margin-top:10px;">
+                            <p class="announcement-heading">{$list|count}</p>
+                            <p class="announcement-text">用户</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <a href="{:U('User/UserList')}">
+                    <div class="panel-footer announcement-bottom"  style="color:rgb(138,110,60)">
+                        <div class="row">
+                            <div class="col-xs-6 text-center">
+                                管理用户
+                            </div>
+                           <div class="col-xs-6 text-center" style="margin-left:0;">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="col-lg-3" style="width: 25%;margin-bottom:10px;">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6 text-center">
+                            <i class="fa fa-edit fa-5x"></i>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-left:0;margin-top:10px;">
+                            <p class="announcement-heading">{$essayNum|count}</p>
+                            <p class="announcement-text">文章</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="{:U('Works/essaysList')}">
+                    <div class="panel-footer announcement-bottom" style="color:rgb(169,69,66)">
+                        <div class="row">
+                            <div class="col-xs-6 text-center">
+                                管理文章
+                            </div>
+                            <div class="col-xs-6 text-center" style="margin-left:0;">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3" style="width: 25%;margin-bottom:10px;">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6 text-center">
+                            <i class="glyphicon glyphicon-th" style="font-size: 68px"></i>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-left:0;margin-top:10px;">
+                            <p class="announcement-heading">{$worksNum|count}</p>
+                            <p class="announcement-text">作品</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="{:U('Works/worksList')}">
+                    <div class="panel-footer announcement-bottom" style="color:rgb(60,120,60)">
+                        <div class="row">
+                            <div class="col-xs-6 text-center">
+                                管理作品
+                            </div>
+                            <div class="col-xs-6 text-center" style="margin-left:0;">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3" style="width: 25%;margin-bottom:10px;">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6 text-center" >
+                            <i class="fa  fa-comment fa-5x"></i>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-left:0;margin-top:10px;">
+                            <p class="announcement-heading">456</p>
+                            <p class="announcement-text">留言</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#">
+                    <div class="panel-footer announcement-bottom" style="color:rgb(50,110,145)">
+                        <div class="row">
+                            <div class="col-xs-6 text-center">
+                                查看留言
+                            </div>
+                            <div class="col-xs-6 text-center" style="margin-left:0;">
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+		<div class="alert alert-success" role="alert" style="width: 70%;">最后登陆时间:&nbsp;<span style="color:black;">{$adminInfo.lastdate}</span></div>
+		<div class="alert alert-info" role="alert" style="width: 50%;">最后登陆IP:&nbsp;<span style="color:black;">{$adminInfo.lastip}</span></div>
+		<div class="alert alert-warning" role="alert" style="width: 30%;">登陆次数:&nbsp;<span style="color:black;">{$adminInfo.loginnum}</span></div>
+
+</div>
+
+</body>
+</html>
