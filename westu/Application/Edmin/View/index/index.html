@@ -1,0 +1,76 @@
+<include file="Public/header"/>
+<style>
+    #s1 {
+        color: white;
+    }
+</style>
+<div>
+    <div class="banner">
+        <div class="example2">
+            <ul>
+                <li><img src="__HomeIMG__/index/banner3.jpg" alt="1"/></li>
+                <li><img src="__HomeIMG__/index/banner2.jpg" alt="2"/></li>
+                <li><img src="__HomeIMG__/index/banner1.jpg" alt="3"/></li>
+            </ul>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+
+            </ol>
+        </div>
+        <!--Luara图片切换骨架end-->
+        <script>
+            $(function () {
+                <!--调用Luara示例-->
+                $(".example2").luara({
+                    width: "1200",
+                    height: "340",
+                    interval: 4500,
+                    selected: "seleted",
+                    deriction: "left"
+                });
+
+            });
+        </script>
+    </div>
+</div>
+<div class="main">
+    <div class="main1-1">
+        <h3>推荐课程</h3>
+        <volist name="course" id="co">
+            <a href="__MODULE__/course/showdetail/id/{$co.cid}">
+                <div class="kecheng1">
+                    <img src="__PUBLIC__/{$co.img}" height="128" width="228">
+                    <div class="main1-1-1"><p>{$co.name}</p></div>
+
+                    <div class="main1-2">
+                        <div class="main1-2l">{$co.typename}</div>
+                        <div class="main1-2r">点击量:{$co.num}</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </a>
+        </volist>
+    </div>
+</div>
+<div class="main1-1">
+    <h3>最新课程</h3>
+    <volist name="list" id="vo">
+        <a href="__MODULE__/course/showdetail/id/{$vo.cid}">
+            <div class="kecheng1">
+                <img src="__PUBLIC__/{$vo.img}" height="128" width="228">
+                <div class="main1-1-1"><p>{$vo.name}</p></div>
+                <div class="main1-2">
+                    <div class="main1-2l">{$vo.typename}</div>
+
+                    <div class="main1-2r">点击量:{$vo.num}</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </a>
+    </volist>
+
+</div>
+</div>
+<include file="Public/footer"/>

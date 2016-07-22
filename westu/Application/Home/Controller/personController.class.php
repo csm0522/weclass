@@ -23,7 +23,7 @@ class personController extends Controller
             $this->assign('userid', session('uid'));
 
 
-            $this->assign('course', $myclass);
+            $this->assign('mycourse', $myclass);
 
             $tag = M('user')->where('uid=' . session('uid'))->getField(tag);
             if ($tag == 2) {

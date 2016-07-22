@@ -13,31 +13,35 @@
         margin-top: 50px;
         font-size: 16px;
     }
+
     .videoshow .title .titleright {
-        float:right;
+        float: right;
         display: inline-block;
         width: 90px;
         height: 30px;
         margin-right: 15%;
-        color:darkred;
+        color: darkred;
         border: 1px solid darkred;
         border-radius: 20px;
         background-color: transparent;
-        outline:none;
+        outline: none;
         transition: all 0.3s linear;
     }
+
     .videoshow .title .titleright:hover {
-        color:white;
+        color: white;
         border: 1px solid darkred;
         border-radius: 10px;
         background-color: darkred;
     }
 </style>
 <volist name="course" id="co">
+
     <div class="videoshow">
         <div class="title">
+            <div id="classsid" style="display: none">{$co.cid}</div>
             <span style="font-size: 16px;">{$co.name}</span>
-            <a href=""><button class="titleright" onclick="adds({$co.cid})">加入收藏</button></a>
+            <button class="titleright" onclick="adds()" id="addbtn">加入收藏</button>
         </div>
         <div class="clear"></div>
         <div class="vedio" style="width: 1100px;margin-left:auto;margin-right:auto;margin-top:15px;">
@@ -49,13 +53,34 @@
     </div>
 </volist>
 <script>
-    function adds(i){
+    $(function () {
+        var cid = $("#classsid").html();
+        var j = $("#addbtn");
         $.ajax({
-            url:'{:U(\'course/addclass\')}',
-            data:{id:i,},
-            type:"post",
-            success:function(res){
+            url: '{:U(\'course/checkstatus\')}',
+            data: {id: cid,},
+            type: 'post',
+            success: function (res) {
+                j.html(res.msg);
+            }
 
+        })
+    });
+    function adds() {
+        var cid = $("#classsid").html();
+        $.ajax({
+            url: '{:U(\'course/addclass\')}',
+            data: {id: cid,},
+            type: 'post',
+            success: function (res) {
+                if (res.result == 0) {
+                    alert(res.msg);
+                }
+                else if (res.result == 1) {
+                    alert(res.msg);
+                }else{
+                    alert(res.msg);
+                }
             }
 
         })

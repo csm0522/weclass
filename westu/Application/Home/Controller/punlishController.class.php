@@ -8,9 +8,15 @@ class punlishController extends Controller
     public function index()
     {
         if (session('uid')) {
-            $types = M('classtype')->select();
-            $this->assign('type', $types);
-            $this->display();
+            $tag=M('user')->where('uid='.session('uid'))->getField(tag);
+            if($tag==2){
+                $types = M('classtype')->select();
+                $this->assign('type', $types);
+                $this->display();
+            }
+           else{
+               $this->error("您没有发布课程权限。",'/westu/index.php/Home/index/index');
+           }
         } else {
             $this->error("由于长时间未操作,已被系统移除,请重新登录", '/westu/index.php/Home/login/index');
         }

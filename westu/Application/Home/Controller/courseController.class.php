@@ -37,7 +37,51 @@ class courseController extends Controller
 
     public function addclass()
     {
-        
+        if (session('uid')) {
+            $cid = $_POST['id'];
+            $con['cid'] = $cid;
+            $con['uid'] = session('uid');
+            $num = M('study')->where($con)->count();
+            $res['res'] = 1;
+
+            if ($num == 0) {
+                $data['cid'] = $cid;
+                $data['uid'] = session('uid');
+                $data['createtime'] = Date('Y-m-d H:i:s');
+                M('study')->where($con)->add($data);
+                $res['res'] = 0;
+                $res['msg'] = '收藏成功';
+                $this->ajaxReturn($res);
+            } else {
+                $res['msg'] = '您已经关注';
+                $this->ajaxReturn($res);
+            }
+        } else {
+            $res['res'] = 2;
+            $res['msg'] = '请先登录';
+            $this->ajaxReturn($res);
+        }
+    }
+    public function checkstatus(){
+        if (session('uid')) {
+            $cid = $_POST['id'];
+            $con['cid'] = $cid;
+            $con['uid'] = session('uid');
+            $num = M('study')->where($con)->count();
+            if ($num == 0) {
+                $res['res'] = 1;
+                $res['msg'] = '加入收藏';
+                $this->ajaxReturn($res);
+            } else {
+                $res['res'] = 0;
+                $res['msg'] = '已收藏';
+                $this->ajaxReturn($res);
+            }
+        } else {
+            $res['res'] = 1;
+            $res['msg'] = '加入收藏';
+            $this->ajaxReturn($res);
+        }
     }
 }
 

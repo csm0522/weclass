@@ -16,23 +16,26 @@
 <div class="clear"></div>
 <div id="person1">
     <div class="article">
-        <empty name="course">
+        <empty name="mycourse">
             <div class="article1">
                 <div class="a-img"><img src="__HomeIMG__/person/swift6.jpg"></div>
                 <div class="a-x">
-                   <p>暂无收藏课程</p>
+                    <p>暂无收藏课程</p>
                 </div>
             </div>
         </empty>
         <volist name="mycourse" id="mo">
             <div class="article1">
-                <div class="a-img"><img src="__MODULE__/course/showdetail/id/{$mo.cid}"></div>
+                <div class="a-img"><img src="__PUBLIC__/{$mo.img}"></div>
                 <div class="a-x">
-                    <span style="font-size:25px;font-weight:bold;">{$co.typename}</span>
-                    <P style="margin-top:15px;"><span style="color:#fa243d;font-size:15px;">已学0%</span>
-                    <p style="float:right;margin-top:20px;margin-right:5px;font-size:13px;color:#8e8e8e;">study.createtime</p>
+                    <h2>{$mo.name}</h2>
+                    <p style="margin-top:20px;margin-right:5px;font-size:13px;color:#8e8e8e;">收藏时间:{$mo.createtime}</p>
+                    <div class="clear"></div>
+                    <div class="study"><a href="__MODULE__/course/showdetail/id/{$mo.cid}">
+                        <button style="display: block;width: 80px;height: 40px;color:darkred;background-color: transparent;border: 1px solid darkred;border-radius: 5px;">前往学习</button>
+                    </a></div>
+
                 </div>
-                <div class="study"><input type="button" name="" value="开始学习"></div>
             </div>
         </volist>
     </div>
