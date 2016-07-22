@@ -12,26 +12,32 @@
     .twtpwd {
         width: 390px !important;
     }
-    .btn{
+
+    .btn {
         margin-bottom: 20px;
     }
-    .res{
+
+    .res {
         float: right;
         margin-right: 20px;
         margin-top: 5px;
-        color:darkred;
+        color: darkred;
     }
 </style>
-    <div class="list3">
-        <div class="personal"><span>修改昵称</span><input type="text" name="" value="" placeholder=""></div>
+<div class="list3">
+    <volist name="userinfo" id="uo">
+        <div class="personal"><span>修改昵称</span><input type="text" name="" value="{$uo.username}" placeholder="" id="username"></div>
         <hr>
-        <div class="personal"><span>介绍自己</span><input type="text" name="" value="" placeholder=""></div>
+        <div class="personal"><span>介绍自己</span><input type="text" name="" value="{$uo.intro}" placeholder="" id="intro"></div>
         <hr>
-        <div class="personal" id="changepwds" ><span>修改密码</span><span style="float: right;font-size: 14px;" id="tips">点击下拉</span><div class="clear"></div></div>
+        <div class="personal" id="changepwds"><span>修改密码</span><span style="float: right;font-size: 14px;" id="tips">点击下拉</span>
+            <div class="clear"></div>
+        </div>
         <div id="changepwd">
             <div class="personal" style="margin-left:148px">
                 <div class="labelpwd">原密码</div>
-                <input type="password" name="" value="" placeholder="" class="twtpwd" id="oldpwd"><span class="res" id="worse">密码错误</span>
+                <input type="password" name="" value="" placeholder="" class="twtpwd" id="oldpwd"><span class="res"
+                                                                                                        id="worse">密码错误</span>
                 <div class="clear"></div>
             </div>
             <div class="personal" style="margin-left:148px">
@@ -40,20 +46,22 @@
             </div>
             <div class="personal" style="margin-left:148px">
                 <div class="labelpwd">确认密码</div>
-                <input type="password" name="" value="" placeholder="" class="twtpwd" id="repwd"><span class="res" id="anres">两次密码不一致</span>
+                <input type="password" name="" value="" placeholder="" class="twtpwd" id="repwd"><span class="res"
+                                                                                                       id="anres">两次密码不一致</span>
                 <div class="clear"></div>
             </div>
-            <div class="personal2"><input class="btn" type="button" name="" value="修改密码" placeholder="" id="chpwd"></div>
+            <div class="personal2"><input class="btn" type="button" name="" value="修改密码" placeholder="" id="chpwd">
+            </div>
             <div class="clear"></div>
         </div>
         <hr>
-        <div class="personal"><span>用户邮箱</span><input type="text" name="" value="" placeholder=""></div>
+        <div class="personal"><span>用户邮箱</span><input type="text" name="" value="{$uo.email}" placeholder="" id="email"></div>
 
+    </volist>
+</div>
 
-    </div>
-
-    <div class="personal2"><input type="button" name="" value="保存" placeholder="" id="saves"></div>
-    <div class="clear"></div>
+<div class="personal2"><input type="button" name="" value="保存" placeholder="" id="saves"></div>
+<div class="clear"></div>
 <script>
     var j = $('#changepwd');
     var i = $('#changepwds');
@@ -79,15 +87,15 @@
             j.slideUp();
         }
     });
-    $('#chpwd').on('click',function(){
-        if(news.val()!=repwd.val()){
+    $('#chpwd').on('click', function () {
+        if (news.val() != repwd.val()) {
             tip_2pwd.slideDown();
         }
-        else{
+        else {
             tip_2pwd.slideUp();
-            var pdata={
-                olds:hex_md5(olds.val()),
-                news:hex_md5(news.val())
+            var pdata = {
+                olds: hex_md5(olds.val()),
+                news: hex_md5(news.val())
             };
             $.ajax({
                 url: '{:U(\'login/changepwd\')}',
@@ -96,24 +104,63 @@
                 success: function (data) {
                     console.log(data);
                     if (data.res == 0) {
-                        alert(data.msg+",现在请重新登陆");
-                        window.location.href = "{:U(\'login/index\')}";
+                        alert(data.msg + ",现在请重新登陆");
+                        window.location.href = "{:U(\'login/logout\')}";
                     }
                     else {
                         switch (data.res) {
-                            case data.res="1" :  alert(data.msg);break;
-                            case data.res="2" : tip_pwd.slideDown();break;
+                            case data.res = "1" :
+                                alert(data.msg);
+                                break;
+                            case data.res = "2" :
+                                tip_pwd.slideDown();
+                                break;
                         }
                     }
                 }
             });
         }
     });
-    $('#chpwd').on('blur',function(){
+    $('#chpwd').on('blur', function () {
         tip_pwd.slideUp();
     });
-    $('#saves').on('click',function(){
+    $('#saves').on('click', function () {
+        var emails = $("#email").val();
+        var user = $("#username").val();
+        var intros = $("#intro").val();
 
+        if (emails == "" || user == "" || intros == "") {
+            alert("请将信息填写完整后再提交");
+        } else {
+            var pdata = {
+                email: emails,
+                intro: intros,
+                username: user,
+            };
+            $.ajax({
+                url: '{:U(\'login/editinfo\')}',
+                data: pdata,
+                type: 'post',
+                success: function (data) {
+                    console.log(data);
+                    if (data.res == 0) {
+                        alert(data.msg + ",现在请重新登陆");
+                        window.location.href = "{:U(\'login/logout\')}";
+                    }
+                    else {
+                        switch (data.res) {
+                            case data.res = "0" :
+                                alert(data.msg);
+                                window.location.href = "{:U(\'person/edit\')}";
+                                break;
+                            case data.res = "1" :
+                                alert(data.msg);
+                                break;
+                        }
+                    }
+                }
+            });
+        }
     })
 
 </script>

@@ -10,20 +10,21 @@ class personController extends Controller
         $concernlist = M('concern')->join('t_user on t_user.uid = t_concern.beid')->where('t_concern.uid=' . session('uid'))->count();
         $fan2list = M('concern')->join('t_user on t_user.uid = t_concern.uid')->where('beid=' . session('uid'))->count();
         $myclass = M('study')->join('t_class on t_class.cid = t_study.cid')->where('t_study.uid=' . session('uid'))->order('sid DESC')->select();
+        $userinfo = M("user")->where('uid='.session('uid'))->select();
         $this->assign('fan', $fans);
         $this->assign('concern', $concern);
         //list
         $this->assign('fans', $fan2list);
         $this->assign('concerns', $concernlist);
-        $this->assign('username', session('username'));
+        $this->assign('userinfo', $userinfo[0]);
         $this->assign('userid', session('uid'));
+
+
         $this->assign('course', $myclass);
-        $user = M('user')->where('uid=' . session('uid'))->select();
-        $this->assign('intro', $user);
 
         $tag = M('user')->where('uid=' . session('uid'))->getField(tag);
         if ($tag == 2) {
-            echo "  <script>$('#pubbtn').hide();</script>";
+            echo "<script>$('#pubbtn').hide();</script>";
         }
         $this->display();
     }
@@ -53,9 +54,11 @@ class personController extends Controller
     {
         $concern = M('concern')->where('uid=' . session('uid'))->count();
         $fans = M('concern')->where('beid=' . session('uid'))->count();
+        $userinfo = M("user")->where('uid='.session('uid'))->select();
+        $this->assign('userinfo', $userinfo);
         $this->assign('fan', $fans);
         $this->assign('concern', $concern);
-        $this->assign('username', session('username'));
+        $this->assign('username', $userinfo['username']);
         $this->assign('userid', session('uid'));
         $intro = M('user')->where('uid=' . session('uid'))->getField(intro);
         $this->assign('intro', $intro);

@@ -3,14 +3,21 @@
 <div class="heada" style="background:url(__HomeIMG__/person/banner.jpg) ">
     <div class="headt"><img src="__HomeIMG__/person/use1.jpg"></div>
     <div class="headw1">
-        <h2 class="web-font" style="margin-bottom: 5px"><?php echo $username; ?></h2>
+        <h2 class="web-font" style="margin-bottom: 5px"><?php echo $userinfo['username']; ?></h2>
         <h4 class="web-font" style="margin-bottom: 40px;color: white;">
             <?php
-        if(empty($intro['intro'])){echo('快一句话介绍自己吧~');}else{echo $intro['intro'];} ?></p>
+        if(empty($userinfo['intro'])){echo('快一句话介绍自己吧~');}else{echo $userinfo['intro'];} ?></p>
         </h4>
         <div class="Take"><a href="__MODULE__/person/edit"><input type="button" name="" value="编辑" placeholder=""></a>
         </div>
-        <div class="publish" id="pubbtn">
+        <?php
+        if($userinfo['tag']==1){
+        }
+        else{
+        echo '<div class="publish" id="pubbtn">';
+        }
+        ?>
+
         <a href="__MODULE__/punlish/index"><input type="button" name="" value="视频发布" placeholder=""></a>
     </div>
 </div>
