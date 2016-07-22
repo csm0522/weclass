@@ -10,9 +10,8 @@
         </h4>
         <div class="Take"><a href="__MODULE__/person/edit"><input type="button" name="" value="编辑" placeholder=""></a>
         </div>
-        <div class="publish" id="pubbtn">
-            <a href="__MODULE__/punlish/index"><input type="button" name="" value="视频发布" placeholder=""></a>
-        </div>
+        <if condition="$userinfo['tag'] eq 2 "><div class="publish" id="pubbtn"><a href="__MODULE__/punlish/index"><input type="button" name="" value="视频发布" placeholder=""></a></div>
+            <else if condition="$userinfo['tag'] eq 1 "/></if>
     </div>
 
     <div class="headw2">

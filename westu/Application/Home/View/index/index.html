@@ -34,140 +34,43 @@
             });
         </script>
     </div>
-    <div class="main">
-        <div class="main1-1">
-            <h3>推荐课程</h3>
-            <a href="#">
-                <div class="kecheng1">
-                    <img src="__HomeIMG__/index/crouse1.jpg" height="128" width="228">
-                    <div class="main1-1-1">HTML5移动Wed&nbspAPP阅读器</div>
-                    <div class="main1-2">
-                        <div class="main1-2l">68.00元</div>
-
-                        <div class="main1-2r">976人在学习</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="kecheng1">
-                    <img src="__HomeIMG__/index/c2.jpg" height="128" width="228">
-                    <div class="main1-1-1">前台到后台开发整站</div>
-                    <div class="main1-2">
-                        <div class="main1-2l">66.00元</div>
-
-                        <div class="main1-2r">676人在学习</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="kecheng1">
-                    <img src="__HomeIMG__/index/c3.jpg" height="128" width="228">
-                    <div class="main1-1-1">所向披靡响应式开发</div>
-                    <div class="main1-2">
-                        <div class="main1-2r">777人在学习</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="kecheng1">
-                    <img src="__HomeIMG__/index/c4.jpg" height="128" width="228">
-                    <div class="main1-1-1">数据库SQL架构</div>
-                    <div class="main1-2">
-                        <div class="main1-2l">45.00元</div>
-                        <div class="main1-2r">765人在学习</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </a>
-            <a href="#">
-                <div class="kecheng1">
-                    <img src="__HomeIMG__/index/c5.jpg" height="128" width="228">
-                    <div class="main1-1-1">APP整套开发教程</div>
-                    <div class="main1-2">
-                        <div class="main1-2l">70.00元</div>
-
-                        <div class="main1-2r">988人在学习</div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
+</div>
+<div class="main">
     <div class="main1-1">
-        <h3>最新课程</h3>
-        <a href="#">
-            <div class="kecheng1">
-                <img src="__HomeIMG__/index/crouse1.jpg" height="128" width="228">
-                <div class="main1-1-1">HTML5移动Wed&nbspAPP阅读器</div>
-                <div class="main1-2">
-                    <div class="main1-2l">68.00元</div>
+        <h3>推荐课程</h3>
+        <volist name="course" id="co">
+            <a href="__MODULE__/course/showdetail/id/{$co.cid}">
+                <div class="kecheng1">
+                    <img src="__PUBLIC__/{$co.img}" height="128" width="228">
+                    <div class="main1-1-1"><p>{$co.name}</p></div>
 
-                    <div class="main1-2r">976人在学习</div>
-                    <div class="clear"></div>
+                    <div class="main1-2">
+                        <div class="main1-2l">{$co.typename}</div>
+                        <div class="main1-2r">点击量:{$co.num}</div>
+                        <div class="clear"></div>
+                    </div>
                 </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="kecheng1">
-                <img src="__HomeIMG__/index/c2.jpg" height="128" width="228">
-                <div class="main1-1-1">前台到后台开发整站</div>
-                <div class="main1-2">
-                    <div class="main1-2l">66.00元</div>
-
-                    <div class="main1-2r">676人在学习</div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="kecheng1">
-                <img src="__HomeIMG__/index/c3.jpg" height="128" width="228">
-                <div class="main1-1-1">所向披靡响应式开发</div>
-                <div class="main1-2">
-                    <div class="main1-2r">777人在学习</div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="kecheng1">
-                <img src="__HomeIMG__/index/c4.jpg" height="128" width="228">
-                <div class="main1-1-1">数据库SQL架构</div>
-                <div class="main1-2">
-                    <div class="main1-2l">45.00元</div>
-
-                    <div class="main1-2r">765人在学习</div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="kecheng1">
-                <img src="__HomeIMG__/index/c5.jpg" height="128" width="228">
-                <div class="main1-1-1">APP整套开发教程</div>
-                <div class="main1-2">
-                    <div class="main1-2l">70.00元</div>
-
-                    <div class="main1-2r">988人在学习</div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </a>
-        <a href="#">
-            <div class="kecheng1">
-                <img src="__HomeIMG__/index/c5.jpg" height="128" width="228">
-                <div class="main1-1-1">APP整套开发教程</div>
-                <div class="main1-2">
-                    <div class="main1-2l">70.00元</div>
-
-                    <div class="main1-2r">988人在学习</div>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </a>
+            </a>
+        </volist>
     </div>
+</div>
+<div class="main1-1">
+    <h3>最新课程</h3>
+    <volist name="list" id="vo">
+        <a href="__MODULE__/course/showdetail/id/{$vo.cid}">
+            <div class="kecheng1">
+                <img src="__PUBLIC__/{$vo.img}" height="128" width="228">
+                <div class="main1-1-1"><p>{$vo.name}</p></div>
+                <div class="main1-2">
+                    <div class="main1-2l">{$vo.typename}</div>
+
+                    <div class="main1-2r">点击量:{$vo.num}</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </a>
+    </volist>
+
+</div>
 </div>
 <include file="Public/footer"/>

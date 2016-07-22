@@ -4,7 +4,7 @@
     <div class="list1">
         <ul>
             <li style="background:url(__HomeIMG__/person/background.png) " id="study" onclick="study()"><a
-                    href="#">我的课程</a></li>
+                    href="#">我的收藏</a></li>
             <li id="concern" onclick="concern()"><a href="#">我的关注</a></li>
             <li id="fan" onclick="fan()"><a href="#">我的粉丝</a></li>
             <div class="clear"></div>
@@ -20,35 +20,21 @@
             <div class="article1">
                 <div class="a-img"><img src="__HomeIMG__/person/swift6.jpg"></div>
                 <div class="a-x">
-                    <span style="font-size:25px;font-weight:bold;">swift学习第一季</span>
-                    <span style="margin-left:10px;">更新完毕</span>
-                    <P style="margin-top:15px;"><span style="color:#fa243d;font-size:15px;">已学0%</span><span
-                            style="font-size:15px;margin-left:15px;">用时&nbsp9分</span><span
-                            style="font-size:15px;margin-left:15px;">学习至1-1&nbsp为什么是可选型</span></P>
-                    <p style="float:right;margin-top:20px;margin-right:5px;font-size:13px;color:#8e8e8e;">
-                        发布时间：2016年6月30日</p>
+                   <p>暂无收藏课程</p>
                 </div>
-                <div class="study"><input type="button" name="" value="开始学习"></div>
             </div>
         </empty>
-        <volist name="course" id="cos">
-
+        <volist name="mycourse" id="mo">
             <div class="article1">
-                <div class="a-img"><img src="__HomeIMG__/person/swift2.jpg"></div>
+                <div class="a-img"><img src="__MODULE__/course/showdetail/id/{$mo.cid}"></div>
                 <div class="a-x">
-                    <span style="font-size:25px;font-weight:bold;">swift学习第一季</span>
-                    <span style="margin-left:10px;">更新完毕</span>
-                    <P style="margin-top:15px;"><span style="color:#fa243d;font-size:15px;">已学0%</span><span
-                            style="font-size:15px;margin-left:15px;">用时&nbsp9分</span><span
-                            style="font-size:15px;margin-left:15px;">学习至1-1&nbsp为什么是可选型</span></P>
-                    <p style="float:right;margin-top:20px;margin-right:5px;font-size:13px;color:#8e8e8e;">
-                        发布时间：2016年6月30日</p>
+                    <span style="font-size:25px;font-weight:bold;">{$co.typename}</span>
+                    <P style="margin-top:15px;"><span style="color:#fa243d;font-size:15px;">已学0%</span>
+                    <p style="float:right;margin-top:20px;margin-right:5px;font-size:13px;color:#8e8e8e;">study.createtime</p>
                 </div>
                 <div class="study"><input type="button" name="" value="开始学习"></div>
             </div>
-
         </volist>
-
     </div>
 
 </div>

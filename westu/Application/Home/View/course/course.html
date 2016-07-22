@@ -8,14 +8,38 @@
 <script src="__HomeJS__/video.min.js"></script>
 <link rel="stylesheet" type="text/css" href="__HomeCSS__/xiangqing.css"/>
 <style>
-    .videoshow h1 {
-        margin-left: 10%;
-        margin-top: 50px;;
+    .videoshow .title {
+        margin-left: 11%;
+        margin-top: 50px;
+        font-size: 16px;
+    }
+    .videoshow .title .titleright {
+        float:right;
+        display: inline-block;
+        width: 90px;
+        height: 30px;
+        margin-right: 15%;
+        color:darkred;
+        border: 1px solid darkred;
+        border-radius: 20px;
+        background-color: transparent;
+        outline:none;
+        transition: all 0.3s linear;
+    }
+    .videoshow .title .titleright:hover {
+        color:white;
+        border: 1px solid darkred;
+        border-radius: 10px;
+        background-color: darkred;
     }
 </style>
 <volist name="course" id="co">
     <div class="videoshow">
-        <h1>{$co.name}</h1>
+        <div class="title">
+            <span style="font-size: 16px;">{$co.name}</span>
+            <a href=""><button class="titleright" onclick="adds({$co.cid})">加入收藏</button></a>
+        </div>
+        <div class="clear"></div>
         <div class="vedio" style="width: 1100px;margin-left:auto;margin-right:auto;margin-top:15px;">
             <!--视频插入的地方-->
             <embed src="{$co.video}"
@@ -25,7 +49,19 @@
     </div>
 </volist>
 <script>
-    //    var j = {$course['video']}
+    function adds(i){
+        $.ajax({
+            url:'{:U(\'course/addclass\')}',
+            data:{id:i,},
+            type:"post",
+            success:function(res){
+
+            }
+
+        })
+    }
+
+
 </script>
 <div class="content">
     <div class="content-left">
@@ -116,12 +152,11 @@
 
     </div>
 
-
     <div class="content-right">
         <p class="box4-p1" style="margin-top: 40px;">讲师介绍</p>
         <div class="box4">
-            <p class="box4-p2">teacher,username</p>
-            <p class="box4-p3">teacher,info</p>
+            <h2> <?php echo $teacher[0]["username"]; ?></h2>
+            <p class="box4-p3"> <?php echo $teacher[0]["intro"]; ?></p>
         </div>
     </div>
 </div>

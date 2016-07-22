@@ -1,29 +1,44 @@
 <?php
 namespace Home\Controller;
+
 use Think\Controller;
+
 class courseController extends Controller
 {
-    public function index(){
-        $types=M('classtype')->select();
-        $list=M('class')->order("num DESC")->select();
-        $this->assign('courselist',$list);
-        $this->assign('type',$types);
+    public function index()
+    {
+        $types = M('classtype')->select();
+        $list = M('class')->order("num DESC")->select();
+        $this->assign('courselist', $list);
+        $this->assign('type', $types);
         $this->display('list');
     }
-    public function showlist(){
+
+    public function showlist()
+    {
         $typeid = $_GET['id'];
-        $types=M('classtype')->select();
-        $list=M('class')->where('ctype='.$typeid)->select();
-        $this->assign('courselist',$list);
-        $this->assign('type',$types);
+        $types = M('classtype')->select();
+        $list = M('class')->where('ctype=' . $typeid)->select();
+        $this->assign('courselist', $list);
+        $this->assign('type', $types);
         $this->display('list');
     }
-    public function showdetail(){
+
+    public function showdetail()
+    {
         $classid = $_GET['id'];
-        M("class")->where('cid='.$classid)->setInc('num',1);
-        $play=M('class')->where('cid='.$classid)->select();
-        $this->assign('course',$play);
+        M("class")->where('cid=' . $classid)->setInc('num', 1);
+        $play = M('class')->where('cid=' . $classid)->select();
+        $teacher = M('user')->where("uid=" . $play[0]['uid'])->select();
+        $this->assign('course', $play);
+        $this->assign('teacher', $teacher);
         $this->display('course');
     }
+
+    public function addclass()
+    {
+        
+    }
 }
+
 ?>
