@@ -59,40 +59,45 @@
 				</li>
 			</ul>
 		</div>
-<div style="margin-left:180px;margin-top:60px;padding-bottom:50px;overflow: scroll;">
+<style>
+	table thead tr{
+		text-align: center;
+	}
+</style>
+<div style="margin-left:180px;margin-top:60px;padding-bottom:50px;overflow: hidden;">
 	<div class="alert alert-info" role="alert">
-		<h1>上传课程列表</h1></div>
-	<table class="table table-bordered">
+		<h1>用户列表</h1></div>
+	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th style="width:60px;;text-align: center;">序号</th>
-				<th style="width:80px;;text-align: center;">用户</th>
-				<th style="width:200px;;text-align: center;">标题</th>
-				<th style="width:60px;;text-align: center;">分类</th>
-				<th style="width:160px;;text-align: center;">课程封图</th>
-				<th style="width:160px;;text-align: center;">发布时间</th>
-				<th style="width:60px;;text-align: center;">点击量</th>
-				<th style="width:80px;;text-align: center;">查看</th>
-				<th style="width:80px;;text-align: center;">删除</th>
+				<th>序号</th>
+				<th>用户名</th>
+				<th>昵称</th>
+				<th>用户邮箱</th>
+				<th>最后登录时间</th>
+				<th>登录次数</th>
+				<th >审核</th>
+				<th >锁定用户</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php if(is_array($list)): foreach($list as $k=>$C): ?><tr>
 					<td><?php echo ($k+1); ?></td>
+					<td><?php echo ($C["user"]); ?></td>
 					<td><?php echo ($C["username"]); ?></td>
-					<td><?php echo ($C["name"]); ?></td>
-					<td><?php echo ($C["typename"]); ?></td>
-					<td><img src="/westu/Public/<?php echo ($C["img"]); ?>" height='150' alt="" /></td>
-					<td><?php echo ($C["createttime"]); ?></td>
-					<td><?php echo ($C["num"]); ?></td>
+					<td><?php echo ($C["email"]); ?></td>
+					<td><?php echo ($C["lasttime"]); ?></td>
+					<td><?php echo ($C["times"]); ?></td>
 					<td>
-						<a href="/westu/Home//course/showdetail/id/<?php echo ($C["cid"]); ?>"><button class="btn btn-primary" type="button">查看</button></a>
+						<?php if($C['tag'] == 0 ): ?><label class="btn btn-warning"  style="width: 82px;">管理员</lable>
+							<?php elseif($C['tag'] == 1 ): ?> <label class="btn btn-primary" >学生用户</lable>
+							<?php elseif($C['tag'] == 2 ): ?> <label class="btn btn-info">老师用户</lable><?php endif; ?>
+
 					</td>
 					<td>
-						<?php if($C['tag'] == 1 ): ?><label class="btn btn-primary" type="button" style="background: black;color:white;width: 82px;">已删除</label>
-
-							<a href="/westu/index.php/Admin/Works/unDeleWorks/id/<?php echo ($C["cid"]); ?>" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
-							<?php elseif($C['tag'] == 0 ): ?> <a href="/westu/index.php/Admin/Works/deleWorks/id/<?php echo ($C["cid"]); ?>" class="primary" ><button class="btn btn-danger" type="button">删除该课程</button></a><?php endif; ?>
+						<?php if($C['status'] == 1 ): ?><label class="btn btn-primary" type="button" style="background: black;color:white;width: 82px;">已锁定</label> |
+							<a href="/westu/index.php/Admin/User/userUnLock/id/<?php echo ($C['uid']); ?>" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
+							<?php elseif($C['status'] == 0 ): ?> <a href="/westu/index.php/Admin/User/userDel/id/<?php echo ($C['uid']); ?>" class="primary" ><button class="btn btn-danger" type="button">删除用户</button></a><?php endif; ?>
 					</td>
 				</tr><?php endforeach; endif; ?>
 

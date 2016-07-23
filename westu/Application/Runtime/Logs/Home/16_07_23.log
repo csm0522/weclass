@@ -177,3 +177,179 @@ INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000353s ]
 
+[ 2016-07-23T17:23:59+08:00 ] ::1 /westu/index.php/Home/login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000439s ]
+
+[ 2016-07-23T17:34:01+08:00 ] ::1 /westu/index.php/Home/login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+
+[ 2016-07-23T17:34:04+08:00 ] ::1 /westu/index.php/Home/login/logins.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_user` WHERE `user` = 'chan' AND `pwd` = '4297f44b13955235245b2497399d7a93' LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `t_user` SET `times`=times+1 WHERE `user` = 'chan' AND `pwd` = '4297f44b13955235245b2497399d7a93' [ RunTime:0.0005s ]
+SQL: UPDATE `t_user` SET `lastip`='0.0.0.0',`lasttime`='2016-07-23 17:34:04' WHERE `user` = 'chan' AND `pwd` = '4297f44b13955235245b2497399d7a93' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `t_user` WHERE `user` = 'chan' AND `pwd` = '4297f44b13955235245b2497399d7a93'  [ RunTime:0.0002s ]
+
+[ 2016-07-23T17:34:04+08:00 ] ::1 /westu/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+
+[ 2016-07-23T17:34:05+08:00 ] ::1 /westu/index.php/Home/course/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+
+[ 2016-07-23T17:34:06+08:00 ] ::1 /westu/index.php/Home/course/showdetail/id/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+
+[ 2016-07-23T17:34:07+08:00 ] ::1 /westu/index.php/Home/course/checkstatus.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000515s ]
+SQL: SHOW COLUMNS FROM `t_study` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_study` WHERE `cid` = 3 AND `uid` = 9 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-07-23T17:34:14+08:00 ] ::1 /westu/index.php/Home/course/addclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001202s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001322s ]
+SQL: SHOW COLUMNS FROM `t_study` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_study` WHERE `cid` = 3 AND `uid` = 9 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-07-23T17:34:17+08:00 ] ::1 /westu/index.php/Home/course/addclass.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `t_study` [ RunTime:0.0018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_study` WHERE `cid` = 3 AND `uid` = 9 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-07-23T17:34:24+08:00 ] ::1 /westu/index.php/Home/course/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+
+[ 2016-07-23T17:34:25+08:00 ] ::1 /westu/index.php/Home/course/showdetail/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+
+[ 2016-07-23T17:34:26+08:00 ] ::1 /westu/index.php/Home/course/checkstatus.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000424s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `t_study` [ RunTime:0.0037s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_study` WHERE `cid` = 4 AND `uid` = 9 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2016-07-23T17:34:30+08:00 ] ::1 /westu/index.php/Home/person/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+
+[ 2016-07-23T17:49:44+08:00 ] ::1 /westu/index.php/Home/login/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+
+[ 2016-07-23T17:49:48+08:00 ] ::1 /westu/index.php/Home/register/checkusername.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_user` WHERE `user` = '123asd' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-07-23T17:49:51+08:00 ] ::1 /westu/index.php/Home/login/logins.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_user` WHERE `user` = '123asd' AND `pwd` = '4297f44b13955235245b2497399d7a93' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-07-23T17:49:54+08:00 ] ::1 /westu/index.php/Home/register/checkusername.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.014186s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014480s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_user` WHERE `user` = '123asd' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-07-23T17:50:02+08:00 ] ::1 /westu/index.php/Home/register/checkusername.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000569s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.0019s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_user` WHERE `user` = 'chan123' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-07-23T17:50:04+08:00 ] ::1 /westu/index.php/Home/login/logins.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000326s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `t_user` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `t_user` WHERE `user` = 'chan123' AND `pwd` = '4297f44b13955235245b2497399d7a93' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `t_user` WHERE `user` = 'chan123' AND `pwd` = '4297f44b13955235245b2497399d7a93'  [ RunTime:0.0002s ]
+SQL: UPDATE `t_user` SET `times`=times+1 WHERE `user` = 'chan123' AND `pwd` = '4297f44b13955235245b2497399d7a93' [ RunTime:0.0003s ]
+SQL: UPDATE `t_user` SET `lastip`='0.0.0.0',`lasttime`='2016-07-23 17:50:04' WHERE `user` = 'chan123' AND `pwd` = '4297f44b13955235245b2497399d7a93' [ RunTime:0.0003s ]
+
+[ 2016-07-23T17:50:45+08:00 ] ::1 /westu/index.php/Home/course/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+
+[ 2016-07-23T17:50:47+08:00 ] ::1 /westu/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+
+[ 2016-07-23T17:51:14+08:00 ] ::1 /westu/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+
+[ 2016-07-23T17:51:21+08:00 ] ::1 /westu/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+
+[ 2016-07-23T17:51:31+08:00 ] ::1 /westu/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+

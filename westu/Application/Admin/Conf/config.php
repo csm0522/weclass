@@ -12,7 +12,7 @@ return array(
     //***********************************SESSION设置**********************************
     'SESSION_OPTIONS'         =>  array(
         'name'                =>  'BJYSESSION',                    //设置session名
-        'expire'              =>  1200,                     //SESSION保存15天24*3600*15,
+        'expire'              =>  3600,                     //SESSION保存15天24*3600*15,
         'use_trans_sid'       =>  1,                               //跨页传递
         'use_only_cookies'    =>  0,                               //是否只开启基于cookies的session的会话方式
     ),

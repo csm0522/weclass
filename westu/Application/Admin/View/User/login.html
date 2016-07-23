@@ -11,7 +11,7 @@
 
 	<body>
 		<!--SIGN UP-->
-		<h1>作品分享后台登陆</h1>
+		<h1> 在线课堂后台登陆</h1>
 		<div class="login-form">
 			<div class="head-info">
 				<label class="lbl-1"> </label>

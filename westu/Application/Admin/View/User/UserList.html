@@ -39,8 +39,8 @@
 					<td>
 						<if condition="$C['status'] eq 1 ">
 							<label class="btn btn-primary" type="button" style="background: black;color:white;width: 82px;">已锁定</label> |
-							<a href="__MODULE__/User/userUnLock/id/{$C['loginid']}" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
-							<elseif condition="$C['status'] eq 0 "/> <a href="__MODULE__/User/userDel/id/{$C['loginid']}" class="primary" ><button class="btn btn-danger" type="button">删除用户</button></a>
+							<a href="__MODULE__/User/userUnLock/id/{$C['uid']}" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
+							<elseif condition="$C['status'] eq 0 "/> <a href="__MODULE__/User/userDel/id/{$C['uid']}" class="primary" ><button class="btn btn-danger" type="button">删除用户</button></a>
 						</if>
 					</td>
 				</tr>

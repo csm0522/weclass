@@ -3,7 +3,7 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>作品分享管理后台</title>
+		<title>在线课堂管理后台</title>
 
 		<link rel="stylesheet" href="/westu/Application/Admin/View/Public/Admin/css/common.css" type="text/css" media="screen" />
 		<script type="text/javascript" src="/westu/Application/Admin/View/Public/Admin/js/jquery.min.js"></script>
@@ -20,7 +20,7 @@
 	<body style="overflow: auto;">
 		<!--顶部-->
 		<div class="top" style="position: fixed;top:0;z-index: 999;">
-			<div style="float: left"><span>作品分享管理中心</span></div>
+			<div style="float: left"><span>在线课堂管理中心</span></div>
 			<div id="ad_setting" class="ad_setting">
 				<span style="margin-right:14px;font-size: 1.8rem;">欢迎您：<?php echo (session('username')); ?></span>
 				<a class="ad_setting_a" style="font-size: 1.8rem;" href="<?php echo U('User/logout');?>">注销</a>
