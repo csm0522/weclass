@@ -24,17 +24,17 @@
 					<td>{$C.name}</td>
 					<td>{$C.typename}</td>
 					<td><img src="__PUBLIC__/{$C.img}" height='150' alt="" /></td>
-					<td>{$C.createtime}</td>
+					<td>{$C.createttime}</td>
 					<td>{$C.num}</td>
 					<td>
 						<a href="/westu/Home//course/showdetail/id/{$C.cid}"><button class="btn btn-primary" type="button">查看</button></a>
 					</td>
 					<td>
-						<if condition="$C['status'] eq 1 ">
+						<if condition="$C['tag'] eq 1 ">
 							<label class="btn btn-primary" type="button" style="background: black;color:white;width: 82px;">已删除</label>
 
 							<a href="__MODULE__/Works/unDeleWorks/id/{$C.cid}" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
-							<elseif condition="$C['status'] eq 0 "/> <a href="__MODULE__/Works/deleWorks/id/{$C.ariticalid}" class="primary" ><button class="btn btn-danger" type="button">删除该课程</button></a>
+							<elseif condition="$C['tag'] eq 0 "/> <a href="__MODULE__/Works/deleWorks/id/{$C.cid}" class="primary" ><button class="btn btn-danger" type="button">删除该课程</button></a>
 						</if>
 					</td>
 				</tr>

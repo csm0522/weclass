@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 
+use Org\Util\Date;
 use Think\Controller;
 
 class punlishController extends Controller
@@ -45,6 +46,7 @@ class punlishController extends Controller
                 'img' => $_POST['imgs'],
                 'video' => $_POST['video'],
                 'cintro' => $_POST['intro'],
+                'createttime' =>Date('Y-m-d H:i:s'),
             );
             if (empty($data['img'])) {
                 $data['img'] = './upload/classTX/2016-07-20/578f1cad312d4.jpg';

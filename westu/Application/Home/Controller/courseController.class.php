@@ -8,7 +8,7 @@ class courseController extends Controller
     public function index()
     {
         $types = M('classtype')->select();
-        $list = M('class')->order("num DESC")->select();
+        $list = M('class')->where('tag=0')->order("num DESC")->select();
         $this->assign('courselist', $list);
         $this->assign('type', $types);
         $this->display('list');
@@ -18,7 +18,7 @@ class courseController extends Controller
     {
         $typeid = $_GET['id'];
         $types = M('classtype')->select();
-        $list = M('class')->where('ctype=' . $typeid)->select();
+        $list = M('class')->where('tag=0')->where('ctype=' . $typeid)->select();
         $this->assign('courselist', $list);
         $this->assign('type', $types);
         $this->display('list');
