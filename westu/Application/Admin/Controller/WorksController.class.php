@@ -12,7 +12,7 @@ class worksController extends Controller
         $user = M('user');
         $page = M('user')->join('RIGHT JOIN t_class ON t_user.uid = t_class.uid')->count();
         $ppp = new Page($page, 5);
-        $list = $user->join('RIGHT JOIN t_class ON t_user.uid = t_class.uid')->join('JOIN t_classtype ON t_class.ctype = t_classtype.tid')->limit($ppp->firstRow . ',' . $ppp->listRows)->select();
+        $list = $user->join('RIGHT JOIN t_class ON t_user.uid = t_class.uid')->join('JOIN t_classtype ON t_class.ctype = t_classtype.tid')->order("cid DESC")->limit($ppp->firstRow . ',' . $ppp->listRows)->select();
         $show = $ppp->show();
         $this->assign('list', $list);
         $this->assign('page', $show);//分页导航

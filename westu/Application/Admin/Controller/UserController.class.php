@@ -43,7 +43,7 @@ class UserController extends Controller
     {
         $page = M('user')->where('status = 0')->count();
         $ppp = new Page($page, 10);
-        $list = M('user')->select();
+        $list = M('user')->order("uid DESC")->select();
         $show = $ppp->show();
         $this->assign('list', $list);
         $this->assign('page', $show);//分页导航
@@ -84,7 +84,7 @@ class UserController extends Controller
     {
         $page = M('user')->where('status = 0')->count();
         $ppp = new Page($page, 10);
-        $list = M('user')->where('tag=1')->select();
+        $list = M('user')->where('tag=1')->order("uid DESC")->select();
         $show = $ppp->show();
         $this->assign('list', $list);
         $this->assign('page', $show);//分页导航
@@ -96,7 +96,7 @@ class UserController extends Controller
     {
         $page = M('user')->where('status = 0')->count();
         $ppp = new Page($page, 10);
-        $list = M('user')->where('tag=2')->select();
+        $list = M('user')->where('tag=2')->order("uid DESC")->select();
         $show = $ppp->show();
         $this->assign('list', $list);
         $this->assign('page', $show);//分页导航
