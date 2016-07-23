@@ -1,4 +1,9 @@
 <include file="Public/header" title="后台主页" />
+<style>
+	table thead tr{
+		text-align: center;
+	}
+</style>
 <div style="margin-left:180px;margin-top:60px;padding-bottom:50px;overflow: hidden;">
 	<div class="alert alert-info" role="alert">
 		<h1>用户列表</h1></div>
@@ -9,9 +14,8 @@
 				<th>用户名</th>
 				<th>昵称</th>
 				<th>用户邮箱</th>
-				<th>创建时间</th>
+				<th>最后登录时间</th>
 				<th>登录次数</th>
-				<th>最后登陆IP</th>
 				<th >审核</th>
 				<th >锁定用户</th>
 			</tr>
@@ -20,24 +24,23 @@
 			<foreach name="list" item="C" key="k">
 				<tr>
 					<td>{$k+1}</td>
-					<td>{$C.loginname}</td>
+					<td>{$C.user}</td>
 					<td>{$C.username}</td>
-					<td>{$C.useremail}</td>
-					<td>{$C.regdate}</td>
-					<td>{$C.loginnum}</td>
-					<td>{$C.lastip}</td>
+					<td>{$C.email}</td>
+					<td>{$C.lasttime}</td>
+					<td>{$C.times}</td>
 					<td>
-						<if condition="$C['quantitystatus'] eq 0 "> <label class="btn btn-primary"  style="background: orange;width: 82px;">未审核</lable>
-							<elseif condition="$C['quantitystatus'] eq 1 "/> <label class="btn btn-primary"  style="background: green;">审核通过</lable>
-							<elseif condition="$C['quantitystatus'] eq 2 "/> <label class="btn btn-primary" style="background: red;">审核失败</lable>
+						<if condition="$C['tag'] eq 0 "> <label class="btn btn-warning"  style="width: 82px;">管理员</lable>
+							<elseif condition="$C['tag'] eq 1 "/> <label class="btn btn-primary" >学生用户</lable>
+							<elseif condition="$C['tag'] eq 2 "/> <label class="btn btn-info">老师用户</lable>
 						</if>
 
 					</td>
 					<td>
-						<if condition="$C['tag'] eq 0 ">
+						<if condition="$C['status'] eq 1 ">
 							<label class="btn btn-primary" type="button" style="background: black;color:white;width: 82px;">已锁定</label> |
 							<a href="__MODULE__/User/userUnLock/id/{$C['loginid']}" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
-							<elseif condition="$C['tag'] eq 1 "/> <a href="__MODULE__/User/userDel/id/{$C['loginid']}" class="primary" ><button class="btn btn-primary" type="button">删除用户</button></a>
+							<elseif condition="$C['status'] eq 0 "/> <a href="__MODULE__/User/userDel/id/{$C['loginid']}" class="primary" ><button class="btn btn-danger" type="button">删除用户</button></a>
 						</if>
 					</td>
 				</tr>

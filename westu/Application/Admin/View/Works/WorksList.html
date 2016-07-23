@@ -1,7 +1,7 @@
 <include file="Public/header" title="后台主页" />
 <div style="margin-left:180px;margin-top:60px;padding-bottom:50px;overflow: scroll;">
 	<div class="alert alert-info" role="alert">
-		<h1>用户作品列表</h1></div>
+		<h1>上传课程列表</h1></div>
 	<table class="table table-bordered">
 		<thead>
 			<tr>
@@ -9,11 +9,10 @@
 				<th style="width:80px;;text-align: center;">用户</th>
 				<th style="width:200px;;text-align: center;">标题</th>
 				<th style="width:60px;;text-align: center;">分类</th>
-				<th style="width:160px;;text-align: center;">作品封图</th>
+				<th style="width:160px;;text-align: center;">课程封图</th>
 				<th style="width:160px;;text-align: center;">发布时间</th>
 				<th style="width:60px;;text-align: center;">点击量</th>
-				<th style="width:80px;;text-align: center;">举报状态</th>
-				<th style="width:80px;;text-align: center;">编辑</th>
+				<th style="width:80px;;text-align: center;">查看</th>
 				<th style="width:80px;;text-align: center;">删除</th>
 			</tr>
 		</thead>
@@ -22,49 +21,20 @@
 				<tr>
 					<td>{$k+1}</td>
 					<td>{$C.username}</td>
-					<td>{$C.title}</td>
-					<td><!--{$C.type}-->
-					<?php if( $C['type'] == 1)
-										{  echo 'UI/UX'; }
-										 else if( $C['type'] == 2)
-										{  echo '平面设计'; }
-										else if( $C['type'] == 3)
-										{  echo '漫画手绘';}
-										else if( $C['type'] == 4)
-										{  echo '网页设计';}
-										else if( $C['type'] == 5)
-										{  echo '3D模型';}
-										else if( $C['type'] == 6)
-										{  echo '创意短片';}
-										else if( $C['type'] == 7)
-										{  echo '摄像摄影';}
-										else if( $C['type'] == 8)
-										{  echo '其他';}
-										?>
-					</td>
-					<td><img src="__PUBLIC__{$C.indeximgpath}" width="150" heih'150' alt="" /></td>
+					<td>{$C.name}</td>
+					<td>{$C.typename}</td>
+					<td><img src="__PUBLIC__/{$C.img}" height='150' alt="" /></td>
 					<td>{$C.createtime}</td>
-					<td>{$C.clicknum}</td>
+					<td>{$C.num}</td>
 					<td>
-						<if condition="$C['reptag'] eq 2 ">
-							<label class="btn btn-primary" type="button" style="background: red;border:none;color:white;width: 82px;margin-bottom: 4px;">被举报</label>
-							<a href="__APP__/Home/Works/works/id/{$C.ariticalid}" class="primary" target="_blank" ><button class="btn btn-primary" type="button"style="border:none;background: pink;margin-bottom: 4px;color:white;width: 82px;">查看</button></a>
-							<a href="__MODULE__/Works/unRepWorks/id/{$C.ariticalid}" class="primary" ><button class="btn btn-primary" type="button"style="border:none;background:orangered;color:white;width: 82px;">取消</button></a>
-							<elseif condition="$C['reptag'] eq 0 "/><button class="btn btn-primary" type="button"style="background: green;color:white;width: 82px;">通过</button>
-						</if>
-
-
+						<a href="/westu/Home//course/showdetail/id/{$C.cid}"><button class="btn btn-primary" type="button">查看</button></a>
 					</td>
 					<td>
-						<a href="__MODULE__/Works/editWorks/id/{$C.ariticalid}"><button class="btn btn-primary" type="button" style="background: lightskyblue;width: 82px;border:none">编辑</button></a>
-
-					</td>
-					<td>
-						<if condition="$C['status'] eq 0 ">
+						<if condition="$C['status'] eq 1 ">
 							<label class="btn btn-primary" type="button" style="background: black;color:white;width: 82px;">已删除</label>
 
-							<a href="__MODULE__/Works/unDeleWorks/id/{$C.ariticalid}" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
-							<elseif condition="$C['status'] eq 1 "/> <a href="__MODULE__/Works/deleWorks/id/{$C.ariticalid}" class="primary" ><button class="btn btn-primary" type="button">删除文章</button></a>
+							<a href="__MODULE__/Works/unDeleWorks/id/{$C.cid}" class="primary" ><button class="btn btn-primary" type="button"style="background: orange;color:white;width: 82px;">解除</button></a>
+							<elseif condition="$C['status'] eq 0 "/> <a href="__MODULE__/Works/deleWorks/id/{$C.ariticalid}" class="primary" ><button class="btn btn-danger" type="button">删除该课程</button></a>
 						</if>
 					</td>
 				</tr>

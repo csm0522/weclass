@@ -20,7 +20,7 @@ class loginController extends Controller
             $res['result'] = 1;
             $res['msg'] = '用户名或密码不正确';
         } else if ($isE == 1) {
-            $datas = array('lastip' => get_client_ip(), 'lasttime' => Date('Y-m-d H:i:s'), 'isonline' => '1');
+            $datas = array('lastip' => get_client_ip(), 'lasttime' => Date('Y-m-d H:i:s'));
 
             $user->where($data)->setInc('times', 1);
             $user->where($data)->save($datas);

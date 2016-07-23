@@ -5,10 +5,10 @@ use Think\Page;
 class worksController extends Controller {
 	public function worksList() {
 //			print_r(get_defined_constants());exit;
-			$user = D('login');
-			$page = D('login')->join('RIGHT JOIN t_user ON t_login.Loginid = t_user.Loginid')->join('RIGHT JOIN t_artical ON t_user.userid = t_artical.userid')->where('upLoadType = 1')-> count();
+			$user = M('user');
+			$page = M('user')->join('RIGHT JOIN t_class ON t_user.uid = t_class.uid')-> count();
 			$ppp = new Page($page,5);
-			$list = $user -> join('RIGHT JOIN t_user ON t_login.Loginid = t_user.Loginid')->join('RIGHT JOIN t_artical ON t_user.userid = t_artical.userid')->where('upLoadType = 1')->limit($ppp->firstRow.','.$ppp->listRows)-> select();
+			$list = $user ->join('RIGHT JOIN t_class ON t_user.uid = t_class.uid')->join('JOIN t_classtype ON t_class.ctype = t_classtype.tid')->limit($ppp->firstRow.','.$ppp->listRows)-> select();
 			$show = $ppp -> show();
 			$this -> assign('list', $list);
 			$this -> assign('page', $show);//分页导航
