@@ -41,65 +41,89 @@ class UserController extends Controller
     public
     function UserList()
     {
-        $page = M('user')->where('status = 0')->count();
-        $ppp = new Page($page, 10);
-        $list = M('user')->order("uid DESC")->select();
-        $show = $ppp->show();
-        $this->assign('list', $list);
-        $this->assign('page', $show);//分页导航
-        $this->display();
+        if (session('uid')) {
+            $page = M('user')->where('status = 0')->count();
+            $ppp = new Page($page, 10);
+            $list = M('user')->order("uid DESC")->select();
+            $show = $ppp->show();
+            $this->assign('list', $list);
+            $this->assign('page', $show);//分页导航
+            $this->display();
+        } else {
+            echo "<script>请先登陆</script>";
+            redirect(U('User/login'), 0);
+        }
     }
 
     public function userDel()
     {
-        if (IS_GET) {
-            $id = $_GET['id'];
-            $status = 1;
-            $data = M('user')->where("uid=".$id)->setField('status', $status);
-            $this->assign('list', $data);
-            redirect(U('User/UserList'));
+        if (session('uid')) {
+            if (IS_GET) {
+                $id = $_GET['id'];
+                $status = 1;
+                $data = M('user')->where("uid=" . $id)->setField('status', $status);
+                $this->assign('list', $data);
+                redirect(U('User/UserList'));
+            } else {
+                echo "<script>请稍后再试</script>";
+            }
         } else {
-            echo "<script>请稍后再试</script>";
+            echo "<script>请先登陆</script>";
+            redirect(U('User/login'), 0);
         }
     }
 
     public
     function userUnLock()
     {
-
-        if (IS_GET) {
-            $id = $_GET['id'];
-            $status = 0;
-            $data = M('user')->where("uid=".$id)->setField('status', $status);
-            $this->assign('list', $data);
-            redirect(U('User/UserList'));
+        if (session('uid')) {
+            if (IS_GET) {
+                $id = $_GET['id'];
+                $status = 0;
+                $data = M('user')->where("uid=" . $id)->setField('status', $status);
+                $this->assign('list', $data);
+                redirect(U('User/UserList'));
 //
+            } else {
+                echo "<script>请稍后再试</script>";
+            }
         } else {
-            echo "<script>请稍后再试</script>";
+            echo "<script>请先登陆</script>";
+            redirect(U('User/login'), 0);
         }
     }
 
     public
     function Stulist()
     {
-        $page = M('user')->where('status = 0')->count();
-        $ppp = new Page($page, 10);
-        $list = M('user')->where('tag=1')->order("uid DESC")->select();
-        $show = $ppp->show();
-        $this->assign('list', $list);
-        $this->assign('page', $show);//分页导航
-        $this->display('User/Userlist');
+        if (session('uid')) {
+            $page = M('user')->where('status = 0')->count();
+            $ppp = new Page($page, 10);
+            $list = M('user')->where('tag=1')->order("uid DESC")->select();
+            $show = $ppp->show();
+            $this->assign('list', $list);
+            $this->assign('page', $show);//分页导航
+            $this->display('User/Userlist');
+        } else {
+            echo "<script>请先登陆</script>";
+            redirect(U('User/login'), 0);
+        }
     }
 
     public
     function Tealist()
     {
-        $page = M('user')->where('status = 0')->count();
-        $ppp = new Page($page, 10);
-        $list = M('user')->where('tag=2')->order("uid DESC")->select();
-        $show = $ppp->show();
-        $this->assign('list', $list);
-        $this->assign('page', $show);//分页导航
-        $this->display('User/Userlist');
+        if (session('uid')) {
+            $page = M('user')->where('status = 0')->count();
+            $ppp = new Page($page, 10);
+            $list = M('user')->where('tag=2')->order("uid DESC")->select();
+            $show = $ppp->show();
+            $this->assign('list', $list);
+            $this->assign('page', $show);//分页导航
+            $this->display('User/Userlist');
+        } else {
+            echo "<script>请先登陆</script>";
+            redirect(U('User/login'), 0);
+        }
     }
 }
